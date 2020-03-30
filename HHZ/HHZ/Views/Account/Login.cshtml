@@ -1,0 +1,113 @@
+﻿@using HHZ.Models
+@model HHZ.ViewModels.LoginViewModel
+@{
+    ViewBag.Title = "Log in";
+}
+
+
+<div class="row">
+    <div class="col-md-8">
+
+        <main id="tg-main" class="tg-main tg-haslayout">
+            <div class="container">
+                <div class="row">
+                    <div id="tg-twocolumns" class="tg-twocolumns">
+                        <div class="col-md-4 col-sm-5 col-xs-12">
+                            <aside id="tg-sidebar" class="tg-sidebar">
+                                <div class="tg-widget tg-widgetlogin">
+                                    <div class="tg-widgetcontent">
+                                        <div class="tg-widgettitle">
+                                            <h3>Login Now</h3>
+                                        </div>
+                                        <div>
+                                            <section id="loginForm">
+                                                @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "tg-themeform tg-formsignin", role = "form" }))
+                                                {
+                                                    @Html.AntiForgeryToken()
+
+                                                    <hr />
+                                                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+                                                    <div class="form-group tg-formgroup">
+                                                        @* @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })*@
+                                                        <div class="form-group tg-formgroup">
+                                                            @Html.TextBoxFor(m => m.UserName, new { @class = "form-group tg-formgroup", placeholder = "Username" })
+                                                            @Html.ValidationMessageFor(m => m.UserName, "", new { @class = "text-danger" })
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group tg-formgroup">
+                                                        @*@Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })*@
+                                                        <div class="form-group tg-formgroup">
+                                                            @Html.PasswordFor(m => m.Password, new { @class = "form-group tg-formgroup", placeholder = "Password" })
+                                                            @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                                                        </div>
+                                                    </div>
+
+
+
+
+                                                    <div class="kepploginpassword">
+                                                        <div class="tg-kepploginpassword">
+                                                            <div class="Checkbox">
+                                                                @Html.CheckBoxFor(m => m.RememberMe)
+                                                                @Html.LabelFor(m => m.RememberMe)
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+
+
+
+
+                                                    <div class="form-group">
+                                                        <div class="tg-btn tg-btn-lg">
+                                                            @*<input type="submit" value="Login Now" class="tg-btn tg-btn-lg" />*@
+
+                                                            <button class="tg-btn tg-btn-lg" type="submit">Login Now</button>
+
+                                                        </div>
+                                                    </div>
+
+
+                                                    <p>
+                                                        @Html.ActionLink("Register as a new user", "Register")
+                                                    </p>
+
+
+
+
+                                                    @* Enable this once you have account confirmation enabled for password reset functionality
+            <p>
+                @Html.ActionLink("Forgot your password?", "ForgotPassword")
+            </p>*@
+                                                }
+                                            </section>
+                                        </div>
+                                        <a href="#" class="tg-btnforgotpassword">Forgot your password?</a>
+                                    </div>
+                                </div>
+
+                            </aside>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+
+        @*<div class="col-md-4">
+                <section id="socialLoginForm">
+                    @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
+                </section>
+            </div>*@
+
+
+    </div>
+</div>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

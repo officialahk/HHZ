@@ -1,0 +1,149 @@
+﻿@using Microsoft.AspNet.Identity
+@using HHZ.Common.Extensions
+@using HHZ.ViewModels
+@if (Request.IsAuthenticated)
+{
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    {
+        @Html.AntiForgeryToken()
+
+       
+        <ul class="nav navbar-nav ">
+
+            <li class="tg-hasdropdown tg-dropdown dropdown">
+                @*@Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })*@
+
+                @*<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                     Hi, @User.Identity.GetUserFirstname()<span class="caret"></span>
+                 </a>*@
+
+                <div class="tg-admin">
+                    <div class="tg-user">
+                        <div class="tg-dropdown">
+                            <figure class="tg-adminpic">
+                                <span class="tg-dashboardbadge">10</span>
+                                <a href="#"><img src="~/images/icons/icon-41.png" alt="image description"></a>
+                            </figure>
+
+
+                            <a href="javascript:void(0);" class="tg-usermenu tg-btndropdown">
+                                <em> Hi, @User.Identity.GetUserFirstname() !</em>
+                            </a>
+                            
+                            
+
+                            <div class="dropdown-menu dropdown-menu tg-dropdownbox tg-usermenu  ">
+                                <ul>
+                                    @if (User.IsInRole("Admin"))
+
+                                    {
+
+                                        @*<li><a href="@Url.Action("Dashboard", "Instructor")"><i class="fa fa-bar-chart-o"></i> Dashboard</a></li>*@
+                                        @*<li><a href = "#" >< i class="fa fa-mortar-board"></i> My Courses</a></li>*@
+
+                                        @*<li><a href="@Url.Action("MyProfile", "Instructor")"><i class="fa fa-user"></i> Profile</a></li>*@
+
+                                    }
+                                    else if (User.IsInRole("Doctor"))
+                                    {
+                                        @*<li><a href="@Url.Action("Dashboard", "Student")"><i class="fa fa-bar-chart-o"></i> Dashboard</a></li>*@
+                                        @*<li><a href="#">< i class="fa fa-mortar-board"></i> My Courses</ a ></ li >*@
+                                        @*< li >< a href = "@Url.Action("MyProfile", "Student")" >< i class="fa fa-user"></i> Profile</a></li>*@
+
+                                        <li>
+                                            <a href="@Url.Action("Dashboard", "Home", new { area = "Doctor" },null)">
+                                                <i class="fa fa-line-chart"></i>
+                                                <span>Insights</span>
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a href="@Url.Action("ProfileSetting","Home")">
+                                                <i class="fa fa-user"></i>
+                                                <span>Profile settings</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="@Url.Action("JobLoction","Home")">
+                                                <i class="fa fa-location-arrow"></i>
+                                                <span>Job Locations</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="@Url.Action("PrivateMessages","Home")">
+                                                <i class="fa fa-envelope-o"></i>
+                                                <span>Private Messages</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="@Url.Action("Appointment","Home")">
+                                                <i class="fa fa-calendar-check-o"></i>
+                                                <span>Appointments</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="@Url.Action("AppointmentSetting","Home")">
+                                                <i class="fa fa-gear"></i>
+                                                <span>Appointment Settings</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="@Url.Action("FavoritListing","Home")">
+                                                <i class="fa fa-heart"></i>
+                                                <span>Favourite Listings</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="@Url.Action("Invoice","Home")">
+                                                <i class="fa fa-clone"></i>
+                                                <span>Invoices</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="@Url.Action("UpdatePackage","Home")">
+                                                <i class="fa fa-arrow-up"></i>
+                                                <span>Update Package</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="@Url.Action("SecuritySettings","Home")">
+                                                <i class="fa fa-gears"></i>
+                                                <span>Security Settings</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="@Url.Action("PrivacySettings","Home")">
+                                                <i class="fa fa-eye"></i>
+                                                <span>Privacy Settings</span>
+                                            </a>
+                                        </li>
+                                    }
+                                    else if (User.IsInRole("Patient"))
+                                    {
+                                        @*<li><a href="@Url.Action("Dashboard", "Ambassador")"><i class="fa fa-bar-chart-o"></i> Dashboard</a></li>*@
+                                        @*<li><a href="@Url.Action("MyProfile", "Ambassador")"><i class="fa fa-user"></i> Profile</a></li>*@
+                                    }
+                                    <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+                                </ul>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+        </ul>
+        @*</li>*@
+                    }
+                    }
+                    else
+                    {
+                        
+
+                        
+        <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+
+        <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+                      
+
+                }

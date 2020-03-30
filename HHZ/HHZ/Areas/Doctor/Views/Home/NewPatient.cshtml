@@ -1,0 +1,951 @@
+﻿
+@{
+    ViewBag.Title = "NewPatient";
+}
+
+<!--************************************
+                Main Start
+*************************************-->
+<main id="tg-main" class="tg-main tg-haslayout">
+    <div class="container">
+        <div class="row">
+            <div id="tg-content" class="tg-content tg-dashboard">
+                <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12 pull-left">
+                    <div class="tg-widgetdashboard">
+                        <div class="tg-widgetprofile">
+                            <figure class="tg-directpostimg">
+                                <a href="#"><img src="~/images/thumbnails/img-20.jpg" alt="image description"></a>
+                                <figcaption> <a class="tg-usericon tg-iconfeatured" href="#"> <em class="tg-usericonholder"> <i class="fa fa-bolt"></i> <span>featured</span> </em> </a> <a class="tg-usericon tg-iconvarified" href="#"> <em class="tg-usericonholder"> <i class="fa fa-shield"></i> <span>varified</span> </em> </a> </figcaption>
+                            </figure>
+                            <div class="tg-directposthead">
+                                <h3><a href="#">Dr. Steve Northrop</a></h3>
+                                <div class="tg-subjects">MDS - Paedodontics &amp; Preventive Dentistry</div>
+                                <ul class="tg-metadata">
+                                    <li><span class="tg-stars"><span></span></span></li>
+                                    <li><a href="#"><i class="fa fa-thumbs-o-up"></i> 99% (1009 votes)</a></li>
+                                </ul>
+                            </div>
+                            <a class="tg-btn tg-btn-lg" href="@Url.Action("ProfileSetting","Home")">Edit Profile</a>
+
+                        </div>
+                        <nav id="tg-dashboardnav" class="tg-dashboardnav">
+                            <ul>
+                                <li>
+                                    <a href="@Url.Action("Dashboard","Home")">
+                                        <i class="fa fa-line-chart"></i>
+                                        <span>Insights</span>
+                                    </a>
+                                </li>
+
+                                <li class="tg-warningmessage">
+                                    <a href="@Url.Action("ProfileSetting","Home")">
+                                        <i class="fa fa-user"></i>
+                                        <span>Profile Settings</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("JobLoction","Home")">
+                                        <i class="fa fa-location-arrow"></i>
+                                        <span>Job Locations</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("PrivateMessages","Home")">
+                                        <i class="fa fa-envelope-o"></i>
+                                        <span>Private Messages</span>
+                                    </a>
+                                </li>
+                                <li class="tg-successmessage tg-active">
+                                    <a href="@Url.Action("Appointment","Home")">
+                                        <i class="fa fa-calendar-check-o"></i>
+                                        <span>Appointments</span>
+                                    </a>
+                                </li>
+                                <li class="tg-errormessage">
+                                    <a href="@Url.Action("AppointmentSetting","Home")">
+                                        <i class="fa fa-gear"></i>
+                                        <span>Appointment Settings</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("FavoritListing","Home")">
+                                        <i class="fa fa-heart"></i>
+                                        <span>Favourite Listings</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("NewPatient","Home")">
+                                        <i class="fa fa-user"></i>
+                                        <span>New Patient</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="@Url.Action("ExPatient","Home")">
+                                        <i class="fa fa-user"></i>
+                                        <span>Ex-Patient</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action(Url.Action("Invoice","Home"))">
+                                        <i class="fa fa-clone"></i>
+                                        <span>Invoices</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("UpdatePackage","Home")">
+                                        <i class="fa fa-arrow-up"></i>
+                                        <span>Update Package</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("SecuritySettings","Home")">
+                                        <i class="fa fa-gears"></i>
+                                        <span>Security Settings</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("PrivacySettings","Home")">
+                                        <i class="fa fa-eye"></i>
+                                        <span>Privacy Settings</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-sign-out"></i>
+                                        <span>Logout</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+
+                    </div>
+                    <div class="tg-widgetdashboard">
+                        <div class="tg-dashboardnotification tg-pkgexpirey"><span>13 days</span>silver package Expire in</div>
+                    </div>
+                    <div class="tg-widgetdashboard">
+                        <div class="tg-banneradd">
+                            <figure><a href="#"><img src="~/images/placeholder/img-01.jpg" alt="image description"></a></figure>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-9 col-md-8 col-sm-8 col-xs-12 pull-right">
+                    <div class="tg-dashboardtabs">
+                        <ul class="tg-dashboardtabnav" role="tablist">
+                            <li role="presentation" class="active"> <a href="#Gernal" aria-controls="Gernal" role="tab" data-toggle="tab">Gernal</a> </li>
+                            <li role="presentation"> <a href="#Signs" aria-controls="Signs" role="tab" data-toggle="tab">Signs</a> </li>
+                            <li role="presentation"> <a href="#Complaints" aria-controls="Complaints" role="tab" data-toggle="tab">Complaints</a> </li>
+                            <li role="presentation"> <a href="#History" aria-controls="History" role="tab" data-toggle="tab">History</a> </li>
+                            <li role="presentation"> <a href="#PQRS" aria-controls="P.Q.R.S" role="tab" data-toggle="tab">P.Q.R.S</a> </li>
+                            <li role="presentation"> <a href="#Test" aria-controls="Test" role="tab" data-toggle="tab">Test</a> </li>
+                            <li role="presentation"> <a href="#PastHistory" aria-controls="PastHistory" role="tab" data-toggle="tab">Past History</a> </li>
+                            <li role="presentation"> <a href="#Symptoms" aria-controls="Symptoms" role="tab" data-toggle="tab">Symptoms</a> </li>
+                            <li role="presentation"> <a href="#Result" aria-controls="Result" role="tab" data-toggle="tab">Result</a> </li>
+
+                        </ul>
+
+
+                        <div class="tab-content tg-dashboardtabcontent">
+
+                            @*1 tab Start*@
+                            <div role="tabpanel" class="tab-pane active" id="Gernal">
+
+                                <div class="tg-dashboardbox">
+                                    <div class="tg-dashboardboxtitle">
+                                        <h2>Basic Information</h2>
+                                    </div>
+                                    <div class="tg-box tg-basicinformation">
+                                        <div class="row tg-rowmargin">
+                                         
+                                            <div class="col-md-4 col-sm-6 col-xs-12 tg-columnpadding">
+                                                <div class="form-group tg-formgroup">
+                                                    <input type="text" name="Patientid" class="form-control" placeholder="Patient ID">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-4 col-sm-6 col-xs-12 tg-columnpadding">
+                                                <div class="form-group tg-formgroup">
+                                                    <input type="text" name="FirstName" class="form-control" placeholder="First Name">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-4 col-sm-6 col-xs-12 tg-columnpadding">
+                                                <div class="form-group tg-formgroup">
+                                                    <input type="text" name="MiddleName" class="form-control" placeholder="Middle Name">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-4 col-sm-6 col-xs-12 tg-columnpadding">
+                                                <div class="form-group tg-formgroup">
+                                                    <input type="text" name="lastname" class="form-control" placeholder="Last Name">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-4 col-sm-6 col-xs-12 tg-columnpadding">
+                                                <div class="form-group tg-formgroup">
+                                                    <input type="text" name="Father" class="form-control" placeholder="S/o,W/O,D,O">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-4 col-sm-12 col-xs-12 tg-columnpadding">
+                                                <div class="form-group tg-formgroup">
+                                                    <span class="tg-select">
+                                                        <select>
+                                                            <option>Mail</option>
+                                                            <option>Femail</option>
+                                                            <option>Other</option>
+
+                                                        </select>
+                                                    </span>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="col-md-4 col-sm-6 col-xs-12 tg-columnpadding">
+                                                <div class="form-group tg-formgroup">
+                                                    <input type="text" name="MotherName" class="form-control" placeholder="Mother Name">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-4 col-sm-12 col-xs-12 tg-columnpadding">
+                                                <div class="form-group tg-formgroup">
+                                                    <span class="tg-select">
+                                                        <select>
+                                                            <option>Meritial Status</option>
+                                                            <option>Yes</option>
+                                                            <option>No</option>
+
+                                                        </select>
+                                                    </span>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="col-md-4 col-sm-6 col-xs-12 tg-columnpadding">
+                                                <div class="form-group tg-formgroup">
+                                                    <input type="text" name="SpouseName" class="form-control" placeholder="Spouse Name">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-4 col-sm-6 col-xs-12 tg-columnpadding">
+                                                <div class="form-group tg-formgroup">
+                                                    <input type="text" name="Children" class="form-control" placeholder="Children">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-4 col-sm-6 col-xs-12 tg-columnpadding">
+                                                <div class="form-group tg-formgroup">
+                                                    <input type="text" name="Caste" class="form-control" placeholder="Caste">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-4 col-sm-6 col-xs-12 tg-columnpadding">
+                                                <span class="tg-inputicon tg-calendaricon">
+                                                    <div class="form-group tg-formgroup">
+                                                        <input type="text" name="DOB" class="form-control" placeholder="DOB" >
+                                                    </div>
+                                                </span>
+
+                                            </div>
+
+                                            <div class="col-md-4 col-sm-6 col-xs-12 tg-columnpadding">
+                                                <div class="form-group tg-formgroup">
+                                                    <input type="text" name="Religion" class="form-control" placeholder="Religion">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-4 col-sm-6 col-xs-12 tg-columnpadding">
+                                                <div class="form-group tg-formgroup">
+                                                    <input type="text" name="Occupation" class="form-control" placeholder="Occupation">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-4 col-sm-6 col-xs-12 tg-columnpadding">
+                                                <div class="form-group tg-formgroup">
+                                                    <input type="text" name="Designation" class="form-control" placeholder="Designation">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-4 col-sm-6 col-xs-12 tg-columnpadding">
+                                                <span class="tg-inputicon tg-calendaricon">
+                                                    <div class="form-group tg-formgroup">
+                                                        <input type="text" name="Suffering From" class="form-control" placeholder="Suffering From">
+                                                    </div>
+                                                    </span>
+                                            </div>
+
+                                            <div class="col-md-4 col-sm-6 col-xs-12 tg-columnpadding">
+                                                <div class="form-group tg-formgroup">
+                                                    <input type="text" name="CNIC" class="form-control" placeholder="CNIC">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-4 col-sm-6 col-xs-12 tg-columnpadding">
+                                                <div class="form-group tg-formgroup">
+                                                    <input type="text" name="PhysicalAddress" class="form-control" placeholder="Physical Address">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-4 col-sm-6 col-xs-12 tg-columnpadding">
+                                                <div class="form-group tg-formgroup">
+                                                    <input type="text" name="MailingAddress" class="form-control" placeholder="Mailing Address">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-4 col-sm-6 col-xs-12 tg-columnpadding">
+                                                <div class="form-group tg-formgroup">
+                                                    <input type="text" name="ContactNumber" class="form-control" placeholder="Contact Number">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-4 col-sm-6 col-xs-12 tg-columnpadding">
+                                                <div class="form-group tg-formgroup">
+                                                    <input type="text" name="ZipCode" class="form-control" placeholder="Zip Code">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-4 col-sm-6 col-xs-12 tg-columnpadding">
+                                                <span class="tg-inputicon tg-calendaricon">
+                                                    <div class="form-group tg-formgroup">
+                                                        <input type="text" name="Date/Time" class="form-control" placeholder="Date / Time">
+                                                    </div>
+                                                    </span>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tg-updateall">
+                                    
+                                    <button class="tg-btn" type="submit">Next</button>
+                                </div>
+                            </div>
+                            @*1 tab End*@
+
+
+                            @*2nd tab Start*@
+                            <div role="tabpanel" class="tab-pane" id="Signs">
+                                <div class="tg-dashboardbox tg-profilesettings">
+                                    <div class="tg-dashboardboxtitle">
+                                        <h2>Signs</h2>
+                                    </div>
+                                    <div class="tg-box tg-dashboardservices tg-uiicons">
+                                        <div class="row tg-rowmargin">
+                                            <div class="col-md-4 col-sm-6 col-xs-12 tg-columnpadding">
+                                                <div class="form-group tg-formgroup">
+                                                    <span class="tg-select">
+                                                        <select>
+                                                            <option>Signs</option>
+                                                            <option>Signs</option>
+                                                            <option>Signs</option>
+                                                        </select>
+                                                    </span>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-4 col-sm-6 col-xs-12 tg-columnpadding">
+                                                <div class="form-group tg-formgroup">
+                                                    <span class="tg-select">
+                                                        <select>
+                                                            <option>Signs value</option>
+                                                            <option>Signs value</option>
+                                                            <option>Signs value</option>
+                                                        </select>
+                                                    </span>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="col-md-2 col-sm-6 col-xs-12 pull-right tg-columnpadding">
+                                                <button class="tg-btn tg-btn-lg" type="submit">add now</button>
+                                            </div>
+                                        </div>
+                                        <div class="tg-dashboardboxtitle tg-margin">
+                                            <h2>Services</h2>
+                                        </div>
+                                        <div class="tg-dashboardboxtitle tg-feetitle tg-margin">
+                                            <h2>Fee Per Patient</h2>
+                                        </div>
+                                        <div class="tg-servicesbox">
+                                            <div class="tg-servicesholder">
+                                                <div class="tg-mainservice"> <em>Cancer Care</em> <i class="fa fa-pencil"></i> <i class="fa fa-close"></i> </div>
+                                                <ul class="tg-themelist tg-liststyledot tg-listdatastyle tg-childservices">
+                                                    <li> <em>Eiusmod Tempor Incididunt</em> <i class="fa fa-pencil"></i> <i class="fa fa-close"></i> <span>$240</span> </li>
+                                                    <li> <em>Labore Et Dolore Magna Aliqua</em> <i class="fa fa-pencil"></i> <i class="fa fa-close"></i> </li>
+                                                    <li> <em>Ut Enim Ad Minim Veniam</em> <i class="fa fa-pencil"></i> <i class="fa fa-close"></i> <span>$240</span> </li>
+                                                    <li> <em>Quis Nostrud Exercitation Laboris</em> <i class="fa fa-pencil"></i> <i class="fa fa-close"></i> <span>$240</span> </li>
+                                                    <li> <em>Nisi Ut Aliquip Exea</em> <i class="fa fa-pencil"></i> <i class="fa fa-close"></i> <span>$240</span> </li>
+                                                    <li> <em>Commodo Consequat</em> <i class="fa fa-pencil"></i> <i class="fa fa-close"></i> <span>$240</span> </li>
+                                                    <li> <em>Duis Aute Cirure Dolor</em> <i class="fa fa-pencil"></i> <i class="fa fa-close"></i> <span>$240</span> </li>
+                                                </ul>
+                                            </div>
+                                            <div class="tg-servicesholder">
+                                                <div class="tg-mainservice"> <em>Cardiac Rehabilitation</em> <i class="fa fa-pencil"></i> <i class="fa fa-close"></i> </div>
+                                                <ul class="tg-themelist tg-liststyledot tg-listdatastyle tg-childservices">
+                                                    <li> <em>Voluptate Velit</em> <i class="fa fa-pencil"></i> <i class="fa fa-close"></i> <span>$240</span> </li>
+                                                    <li> <em>Esse Cillum Dolore</em> <i class="fa fa-pencil"></i> <i class="fa fa-close"></i> <span>$240</span> </li>
+                                                    <li> <em>Eu Fugiat Nulla Pariatur</em> <i class="fa fa-pencil"></i> <i class="fa fa-close"></i> <span>$240</span> </li>
+                                                    <li> <em>Excepteur Sint Occaeca</em> <i class="fa fa-pencil"></i> <i class="fa fa-close"></i> <span>$240</span> </li>
+                                                    <li> <em>Cupidatat Non Proident</em> <i class="fa fa-pencil"></i> <i class="fa fa-close"></i> <span>$240</span> </li>
+                                                </ul>
+                                            </div>
+                                            <div class="tg-servicesholder">
+                                                <div class="tg-mainservice"> <em>Therapy</em> <i class="fa fa-pencil"></i> <i class="fa fa-close"></i> </div>
+                                                <ul class="tg-themelist tg-liststyledot tg-listdatastyle tg-childservices">
+                                                    <li> <em>Deserunt Mollit</em> <i class="fa fa-pencil"></i> <i class="fa fa-close"></i> <span>$240</span> </li>
+                                                    <li> <em>Anim Id Est Laborum</em> <i class="fa fa-pencil"></i> <i class="fa fa-close"></i> <span>$240</span> </li>
+                                                    <li> <em>Sed Ut Perspiciatis</em> <i class="fa fa-pencil"></i> <i class="fa fa-close"></i> <span>$240</span> </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tg-updateall">
+                                    <span class="tg-note">* Click <strong>update all changes</strong> to update latest added detail (s).</span>
+                                    <button class="tg-btn" type="submit">update now</button>
+                                </div>
+                            </div>
+                            @*2nd tab end*@
+
+                            @*3rd tab Start*@
+                            <div role="tabpanel" class="tab-pane" id="Complaints">
+                                <div class="tg-dashboardbox">
+
+
+                                    <div class="tg-dashboardboxtitle">
+                                        <h3>Present Complaints In,Chronological Order</h3>
+                                        <h2>(Location,Sensation,Modalities,Amelioration)</h2>
+
+                                    </div>
+
+                                    <div class="col-sm-12 col-xs-12 tg-columnpadding">
+                                        <textarea name="Complaints" id="Complaints" class="form-control"></textarea>
+                                    </div>
+                                </div>
+                                <div class="tg-updateall">
+                                    <span class="tg-note">* Click <strong>update all changes</strong> to update latest added detail (s).</span>
+                                    <button class="tg-btn" type="submit">update now</button>
+                                </div>
+                            </div>
+                            @*3rd tab End*@
+
+                            @*4 tab Start*@
+                            <div role="tabpanel" class="tab-pane" id="History">
+                                <div class="tg-dashboardbox tg-profilesettings">
+                                    <div class="tg-dashboardboxtitle">
+                                        <h2>Family History (F/H)</h2>
+                                    </div>
+                                    <div class="tg-box tg-dashboardservices tg-uiicons">
+                                        <div class="row tg-rowmargin">
+                                            <div class="col-md-4 col-sm-6 col-xs-12 tg-columnpadding">
+                                                <div class="form-group tg-formgroup">
+                                                    <span class="tg-select">
+                                                        <select>
+                                                            <option>Relation</option>
+                                                            <option>Relation</option>
+                                                            <option>Relation</option>
+                                                        </select>
+                                                    </span>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-4 col-sm-6 col-xs-12 tg-columnpadding">
+                                                <div class="form-group tg-formgroup">
+                                                    <span class="tg-select">
+                                                        <select>
+                                                            <option>How Many</option>
+                                                            <option>How Many</option>
+                                                            <option>How Many</option>
+                                                        </select>
+                                                    </span>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-4 col-sm-6 col-xs-12 tg-columnpadding">
+                                                <div class="form-group tg-formgroup">
+                                                    <span class="tg-select">
+                                                        <select>
+                                                            <option>Status</option>
+                                                            <option>Yes</option>
+                                                            <option>No</option>
+                                                        </select>
+                                                    </span>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="col-md-4 col-sm-6 col-xs-12 tg-columnpadding">
+                                                <div class="form-group tg-formgroup">
+                                                    <input type="text" name="DeathAge" class="form-control" placeholder="Death Age">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-4 col-sm-6 col-xs-12 tg-columnpadding">
+                                                <div class="form-group tg-formgroup">
+                                                    <input type="text" name="CauseofDeath" class="form-control" placeholder="Cause of Death">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-4 col-sm-6 col-xs-12 tg-columnpadding">
+                                                <div class="form-group tg-formgroup">
+                                                    <input type="text" name="SufferingFrom" class="form-control" placeholder="Suffering From">
+                                                </div>
+                                            </div>
+
+
+
+                                            <div class="col-md-2 col-sm-6 col-xs-12 pull-right tg-columnpadding">
+                                                <button class="tg-btn tg-btn-lg" type="submit">add now</button>
+                                            </div>
+                                        </div>
+                                        <div class="tg-dashboardboxtitle tg-margin">
+                                            <h2>Services</h2>
+                                        </div>
+                                        <div class="tg-dashboardboxtitle tg-feetitle tg-margin">
+                                            <h2>Fee Per Patient</h2>
+                                        </div>
+                                        <div class="tg-servicesbox">
+                                            <div class="tg-servicesholder">
+                                                <div class="tg-mainservice"> <em>Cancer Care</em> <i class="fa fa-pencil"></i> <i class="fa fa-close"></i> </div>
+                                                <ul class="tg-themelist tg-liststyledot tg-listdatastyle tg-childservices">
+                                                    <li> <em>Eiusmod Tempor Incididunt</em> <i class="fa fa-pencil"></i> <i class="fa fa-close"></i> <span>$240</span> </li>
+                                                    <li> <em>Labore Et Dolore Magna Aliqua</em> <i class="fa fa-pencil"></i> <i class="fa fa-close"></i> </li>
+                                                    <li> <em>Ut Enim Ad Minim Veniam</em> <i class="fa fa-pencil"></i> <i class="fa fa-close"></i> <span>$240</span> </li>
+                                                    <li> <em>Quis Nostrud Exercitation Laboris</em> <i class="fa fa-pencil"></i> <i class="fa fa-close"></i> <span>$240</span> </li>
+                                                    <li> <em>Nisi Ut Aliquip Exea</em> <i class="fa fa-pencil"></i> <i class="fa fa-close"></i> <span>$240</span> </li>
+                                                    <li> <em>Commodo Consequat</em> <i class="fa fa-pencil"></i> <i class="fa fa-close"></i> <span>$240</span> </li>
+                                                    <li> <em>Duis Aute Cirure Dolor</em> <i class="fa fa-pencil"></i> <i class="fa fa-close"></i> <span>$240</span> </li>
+                                                </ul>
+                                            </div>
+                                            <div class="tg-servicesholder">
+                                                <div class="tg-mainservice"> <em>Cardiac Rehabilitation</em> <i class="fa fa-pencil"></i> <i class="fa fa-close"></i> </div>
+                                                <ul class="tg-themelist tg-liststyledot tg-listdatastyle tg-childservices">
+                                                    <li> <em>Voluptate Velit</em> <i class="fa fa-pencil"></i> <i class="fa fa-close"></i> <span>$240</span> </li>
+                                                    <li> <em>Esse Cillum Dolore</em> <i class="fa fa-pencil"></i> <i class="fa fa-close"></i> <span>$240</span> </li>
+                                                    <li> <em>Eu Fugiat Nulla Pariatur</em> <i class="fa fa-pencil"></i> <i class="fa fa-close"></i> <span>$240</span> </li>
+                                                    <li> <em>Excepteur Sint Occaeca</em> <i class="fa fa-pencil"></i> <i class="fa fa-close"></i> <span>$240</span> </li>
+                                                    <li> <em>Cupidatat Non Proident</em> <i class="fa fa-pencil"></i> <i class="fa fa-close"></i> <span>$240</span> </li>
+                                                </ul>
+                                            </div>
+                                            <div class="tg-servicesholder">
+                                                <div class="tg-mainservice"> <em>Therapy</em> <i class="fa fa-pencil"></i> <i class="fa fa-close"></i> </div>
+                                                <ul class="tg-themelist tg-liststyledot tg-listdatastyle tg-childservices">
+                                                    <li> <em>Deserunt Mollit</em> <i class="fa fa-pencil"></i> <i class="fa fa-close"></i> <span>$240</span> </li>
+                                                    <li> <em>Anim Id Est Laborum</em> <i class="fa fa-pencil"></i> <i class="fa fa-close"></i> <span>$240</span> </li>
+                                                    <li> <em>Sed Ut Perspiciatis</em> <i class="fa fa-pencil"></i> <i class="fa fa-close"></i> <span>$240</span> </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tg-updateall">
+                                    <span class="tg-note">* Click <strong>update all changes</strong> to update latest added detail (s).</span>
+                                    <button class="tg-btn" type="submit">update now</button>
+                                </div>
+                            </div>
+
+                            @*4 tab End*@
+
+
+                            @*5 tab Start*@
+                            <div role="tabpanel" class="tab-pane active" id="PQRS">
+
+                                <div class="tg-dashboardbox">
+                                    <div class="tg-dashboardboxtitle">
+                                        <h2>P.Q.RS</h2>
+                                    </div>
+                                    <div class="tg-box tg-basicinformation">
+                                        <div class="row tg-rowmargin">
+
+                                            <div class="col-sm-12 col-xs-12 tg-columnpadding">
+                                                <input type="text" name="PECULIAR" class="form-control" placeholder="PECULIAR">
+                                            </div>
+                                            <div class="col-sm-12 col-xs-12 tg-columnpadding">
+                                                <input type="text" name="QUEER" class="form-control" placeholder="QUEER">
+                                            </div>
+                                            <div class="col-sm-12 col-xs-12 tg-columnpadding">
+                                                <input type="text" name="STRANGE" class="form-control" placeholder="STRANGE">
+                                            </div>
+                                            <div class="col-sm-12 col-xs-12 tg-columnpadding">
+                                                <input type="text" name="LIKES" class="form-control" placeholder="LIKES">
+                                            </div>
+                                            <div class="col-sm-12 col-xs-12 tg-columnpadding">
+                                                <input type="text" name="DISLIKES" class="form-control" placeholder="DISLIKES">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="tg-updateall">
+                                  
+                                    <button class="tg-btn" type="submit">Next</button>
+                                </div>
+                            </div>
+                            @*5 tab End*@
+
+
+                            @*6 tab Start*@
+                            <div role="tabpanel" class="tab-pane" id="Test">
+                                <div class="tg-dashboardbox tg-profilesettings">
+                                    <div class="tg-dashboardboxtitle">
+                                        <h2>laboratory test</h2>
+                                    </div>
+                                    <div class="tg-box tg-dashboardservices tg-uiicons">
+                                        <div class="row tg-rowmargin">
+                                            <div class="col-md-4 col-sm-6 col-xs-12 tg-columnpadding">
+                                                <div class="form-group tg-formgroup">
+                                                    <span class="tg-select">
+                                                        <select>
+                                                            <option>Test</option>
+                                                            <option>Test</option>
+                                                            <option>Test</option>
+                                                        </select>
+                                                    </span>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-4 col-sm-6 col-xs-12 tg-columnpadding">
+                                                <div class="form-group tg-formgroup">
+                                                    <span class="tg-select">
+                                                        <select>
+                                                            <option>Parameter</option>
+                                                            <option>Parameter</option>
+                                                            <option>Parameter</option>
+                                                        </select>
+                                                    </span>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-4 col-sm-6 col-xs-12 tg-columnpadding">
+                                                <div class="form-group tg-formgroup">
+                                                    <span class="tg-select">
+                                                        <select>
+                                                            <option>Parameter Value</option>
+                                                            <option>Parameter Value</option>
+                                                            <option>Parameter Value</option>
+                                                        </select>
+                                                    </span>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-4 col-sm-6 col-xs-12 tg-columnpadding">
+                                                <span class="tg-inputicon tg-calendaricon">
+
+                                                    <div class="form-group tg-formgroup">
+                                                        <input type="text" name="Date/Time" class="form-control" placeholder="Date / Time">
+                                                    </div>
+                                                    </span>
+                                            </div>
+
+
+
+
+
+
+                                            <div class="col-md-2 col-sm-6 col-xs-12 pull-right tg-columnpadding">
+                                                <button class="tg-btn tg-btn-lg" type="submit">add now</button>
+                                            </div>
+                                        </div>
+                                        <div class="tg-dashboardboxtitle tg-margin">
+                                            <h2>Services</h2>
+                                        </div>
+                                        <div class="tg-dashboardboxtitle tg-feetitle tg-margin">
+                                            <h2>Fee Per Patient</h2>
+                                        </div>
+                                        <div class="tg-servicesbox">
+                                            <div class="tg-servicesholder">
+                                                <div class="tg-mainservice"> <em>Cancer Care</em> <i class="fa fa-pencil"></i> <i class="fa fa-close"></i> </div>
+                                                <ul class="tg-themelist tg-liststyledot tg-listdatastyle tg-childservices">
+                                                    <li> <em>Eiusmod Tempor Incididunt</em> <i class="fa fa-pencil"></i> <i class="fa fa-close"></i> <span>$240</span> </li>
+                                                    <li> <em>Labore Et Dolore Magna Aliqua</em> <i class="fa fa-pencil"></i> <i class="fa fa-close"></i> </li>
+                                                    <li> <em>Ut Enim Ad Minim Veniam</em> <i class="fa fa-pencil"></i> <i class="fa fa-close"></i> <span>$240</span> </li>
+                                                    <li> <em>Quis Nostrud Exercitation Laboris</em> <i class="fa fa-pencil"></i> <i class="fa fa-close"></i> <span>$240</span> </li>
+                                                    <li> <em>Nisi Ut Aliquip Exea</em> <i class="fa fa-pencil"></i> <i class="fa fa-close"></i> <span>$240</span> </li>
+                                                    <li> <em>Commodo Consequat</em> <i class="fa fa-pencil"></i> <i class="fa fa-close"></i> <span>$240</span> </li>
+                                                    <li> <em>Duis Aute Cirure Dolor</em> <i class="fa fa-pencil"></i> <i class="fa fa-close"></i> <span>$240</span> </li>
+                                                </ul>
+                                            </div>
+                                            <div class="tg-servicesholder">
+                                                <div class="tg-mainservice"> <em>Cardiac Rehabilitation</em> <i class="fa fa-pencil"></i> <i class="fa fa-close"></i> </div>
+                                                <ul class="tg-themelist tg-liststyledot tg-listdatastyle tg-childservices">
+                                                    <li> <em>Voluptate Velit</em> <i class="fa fa-pencil"></i> <i class="fa fa-close"></i> <span>$240</span> </li>
+                                                    <li> <em>Esse Cillum Dolore</em> <i class="fa fa-pencil"></i> <i class="fa fa-close"></i> <span>$240</span> </li>
+                                                    <li> <em>Eu Fugiat Nulla Pariatur</em> <i class="fa fa-pencil"></i> <i class="fa fa-close"></i> <span>$240</span> </li>
+                                                    <li> <em>Excepteur Sint Occaeca</em> <i class="fa fa-pencil"></i> <i class="fa fa-close"></i> <span>$240</span> </li>
+                                                    <li> <em>Cupidatat Non Proident</em> <i class="fa fa-pencil"></i> <i class="fa fa-close"></i> <span>$240</span> </li>
+                                                </ul>
+                                            </div>
+                                            <div class="tg-servicesholder">
+                                                <div class="tg-mainservice"> <em>Therapy</em> <i class="fa fa-pencil"></i> <i class="fa fa-close"></i> </div>
+                                                <ul class="tg-themelist tg-liststyledot tg-listdatastyle tg-childservices">
+                                                    <li> <em>Deserunt Mollit</em> <i class="fa fa-pencil"></i> <i class="fa fa-close"></i> <span>$240</span> </li>
+                                                    <li> <em>Anim Id Est Laborum</em> <i class="fa fa-pencil"></i> <i class="fa fa-close"></i> <span>$240</span> </li>
+                                                    <li> <em>Sed Ut Perspiciatis</em> <i class="fa fa-pencil"></i> <i class="fa fa-close"></i> <span>$240</span> </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tg-updateall">
+                                    <span class="tg-note">* Click <strong>update all changes</strong> to update latest added detail (s).</span>
+                                    <button class="tg-btn" type="submit">update now</button>
+                                </div>
+                            </div>
+
+                            @*6 tab End*@
+
+
+                            @*7 tab Start*@
+                            <div role="tabpanel" class="tab-pane" id="PastHistory">
+                                <div class="tg-dashboardbox tg-profilesettings">
+                                    <div class="tg-dashboardboxtitle">
+                                        <h2>Past History (F/H)</h2>
+                                    </div>
+                                    <div class="tg-box tg-dashboardservices tg-uiicons">
+                                        <div class="row tg-rowmargin">
+
+
+                                            <div class="col-md-4 col-sm-6 col-xs-12 tg-columnpadding">
+                                                <div class="form-group tg-formgroup">
+                                                    <input type="text" name="Diseases" class="form-control" placeholder="Diseases">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-4 col-sm-6 col-xs-12 tg-columnpadding">
+                                                <div class="form-group tg-formgroup">
+                                                    <input type="text" name="Age" class="form-control" placeholder="Age">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-4 col-sm-6 col-xs-12 tg-columnpadding">
+                                                <div class="form-group tg-formgroup">
+                                                    <input type="text" name="Duration" class="form-control" placeholder="Duration">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-4 col-sm-6 col-xs-12 tg-columnpadding">
+                                                <div class="form-group tg-formgroup">
+                                                    <span class="tg-select">
+                                                        <select>
+                                                            <option>Month</option>
+                                                            <option>Week</option>
+                                                            <option>Days</option>
+                                                        </select>
+                                                    </span>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-4 col-sm-6 col-xs-12 tg-columnpadding">
+                                                <div class="form-group tg-formgroup">
+                                                    <input type="text" name="Medication" class="form-control" placeholder="Medication">
+                                                </div>
+                                            </div>
+
+
+
+
+
+
+                                            <div class="col-md-2 col-sm-6 col-xs-12 pull-right tg-columnpadding">
+                                                <button class="tg-btn tg-btn-lg" type="submit">add now</button>
+                                            </div>
+                                        </div>
+                                        <div class="tg-dashboardboxtitle tg-margin">
+                                            <h2>Services</h2>
+                                        </div>
+                                        <div class="tg-dashboardboxtitle tg-feetitle tg-margin">
+                                            <h2>Fee Per Patient</h2>
+                                        </div>
+                                        <div class="tg-servicesbox">
+                                            <div class="tg-servicesholder">
+                                                <div class="tg-mainservice"> <em>Cancer Care</em> <i class="fa fa-pencil"></i> <i class="fa fa-close"></i> </div>
+                                                <ul class="tg-themelist tg-liststyledot tg-listdatastyle tg-childservices">
+                                                    <li> <em>Eiusmod Tempor Incididunt</em> <i class="fa fa-pencil"></i> <i class="fa fa-close"></i> <span>$240</span> </li>
+                                                    <li> <em>Labore Et Dolore Magna Aliqua</em> <i class="fa fa-pencil"></i> <i class="fa fa-close"></i> </li>
+                                                    <li> <em>Ut Enim Ad Minim Veniam</em> <i class="fa fa-pencil"></i> <i class="fa fa-close"></i> <span>$240</span> </li>
+                                                    <li> <em>Quis Nostrud Exercitation Laboris</em> <i class="fa fa-pencil"></i> <i class="fa fa-close"></i> <span>$240</span> </li>
+                                                    <li> <em>Nisi Ut Aliquip Exea</em> <i class="fa fa-pencil"></i> <i class="fa fa-close"></i> <span>$240</span> </li>
+                                                    <li> <em>Commodo Consequat</em> <i class="fa fa-pencil"></i> <i class="fa fa-close"></i> <span>$240</span> </li>
+                                                    <li> <em>Duis Aute Cirure Dolor</em> <i class="fa fa-pencil"></i> <i class="fa fa-close"></i> <span>$240</span> </li>
+                                                </ul>
+                                            </div>
+                                            <div class="tg-servicesholder">
+                                                <div class="tg-mainservice"> <em>Cardiac Rehabilitation</em> <i class="fa fa-pencil"></i> <i class="fa fa-close"></i> </div>
+                                                <ul class="tg-themelist tg-liststyledot tg-listdatastyle tg-childservices">
+                                                    <li> <em>Voluptate Velit</em> <i class="fa fa-pencil"></i> <i class="fa fa-close"></i> <span>$240</span> </li>
+                                                    <li> <em>Esse Cillum Dolore</em> <i class="fa fa-pencil"></i> <i class="fa fa-close"></i> <span>$240</span> </li>
+                                                    <li> <em>Eu Fugiat Nulla Pariatur</em> <i class="fa fa-pencil"></i> <i class="fa fa-close"></i> <span>$240</span> </li>
+                                                    <li> <em>Excepteur Sint Occaeca</em> <i class="fa fa-pencil"></i> <i class="fa fa-close"></i> <span>$240</span> </li>
+                                                    <li> <em>Cupidatat Non Proident</em> <i class="fa fa-pencil"></i> <i class="fa fa-close"></i> <span>$240</span> </li>
+                                                </ul>
+                                            </div>
+                                            <div class="tg-servicesholder">
+                                                <div class="tg-mainservice"> <em>Therapy</em> <i class="fa fa-pencil"></i> <i class="fa fa-close"></i> </div>
+                                                <ul class="tg-themelist tg-liststyledot tg-listdatastyle tg-childservices">
+                                                    <li> <em>Deserunt Mollit</em> <i class="fa fa-pencil"></i> <i class="fa fa-close"></i> <span>$240</span> </li>
+                                                    <li> <em>Anim Id Est Laborum</em> <i class="fa fa-pencil"></i> <i class="fa fa-close"></i> <span>$240</span> </li>
+                                                    <li> <em>Sed Ut Perspiciatis</em> <i class="fa fa-pencil"></i> <i class="fa fa-close"></i> <span>$240</span> </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tg-updateall">
+                                    <span class="tg-note">* Click <strong>update all changes</strong> to update latest added detail (s).</span>
+                                    <button class="tg-btn" type="submit">update now</button>
+                                </div>
+                            </div>
+
+                            @*7 tab End*@
+
+
+                            @*7 tab Start*@
+                            <div role="tabpanel" class="tab-pane" id="Symptoms">
+                                <div class="tg-dashboardbox tg-profilesettings">
+                                    <div class="tg-dashboardboxtitle">
+                                        <h2>Symptoms</h2>
+                                    </div>
+                                    <div class="tg-box tg-dashboardservices tg-uiicons">
+                                        <div class="row tg-rowmargin">
+
+
+                                            <div class="col-md-4 col-sm-6 col-xs-12 tg-columnpadding">
+                                                <div class="form-group tg-formgroup">
+                                                    <span class="tg-select">
+                                                        <select>
+                                                            <option>Symptoms</option>
+                                                            <option>Symptoms</option>
+                                                            <option>Symptoms</option>
+                                                        </select>
+                                                    </span>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-4 col-sm-6 col-xs-12 tg-columnpadding">
+                                                <div class="form-group tg-formgroup">
+                                                    <span class="tg-select">
+                                                        <select>
+                                                            <option>Intensity</option>
+                                                            <option>Intensity</option>
+                                                            <option>Intensity</option>
+                                                        </select>
+                                                    </span>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="col-md-4 col-sm-6 col-xs-12 tg-columnpadding">
+                                                <div class="form-group tg-formgroup">
+                                                    <span class="tg-select">
+                                                        <select>
+                                                            <option>Duration</option>
+                                                            <option>Duration</option>
+                                                            <option>Duration</option>
+                                                        </select>
+                                                    </span>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="col-md-4 col-sm-6 col-xs-12 tg-columnpadding">
+                                                <div class="form-group tg-formgroup">
+                                                    <span class="tg-select">
+                                                        <select>
+                                                            <option>Month</option>
+                                                            <option>Week</option>
+                                                            <option>Days</option>
+                                                        </select>
+                                                    </span>
+                                                </div>
+                                            </div>
+
+
+
+
+                                            <div class="col-md-2 col-sm-6 col-xs-12 pull-right tg-columnpadding">
+                                                <button class="tg-btn tg-btn-lg" type="submit">add now</button>
+                                            </div>
+                                        </div>
+                                        <div class="tg-dashboardboxtitle tg-margin">
+                                            <h2>Services</h2>
+                                        </div>
+                                        <div class="tg-dashboardboxtitle tg-feetitle tg-margin">
+                                            <h2>Fee Per Patient</h2>
+                                        </div>
+                                        <div class="tg-servicesbox">
+                                            <div class="tg-servicesholder">
+                                                <div class="tg-mainservice"> <em>Cancer Care</em> <i class="fa fa-pencil"></i> <i class="fa fa-close"></i> </div>
+                                                <ul class="tg-themelist tg-liststyledot tg-listdatastyle tg-childservices">
+                                                    <li> <em>Eiusmod Tempor Incididunt</em> <i class="fa fa-pencil"></i> <i class="fa fa-close"></i> <span>$240</span> </li>
+                                                    <li> <em>Labore Et Dolore Magna Aliqua</em> <i class="fa fa-pencil"></i> <i class="fa fa-close"></i> </li>
+                                                    <li> <em>Ut Enim Ad Minim Veniam</em> <i class="fa fa-pencil"></i> <i class="fa fa-close"></i> <span>$240</span> </li>
+                                                    <li> <em>Quis Nostrud Exercitation Laboris</em> <i class="fa fa-pencil"></i> <i class="fa fa-close"></i> <span>$240</span> </li>
+                                                    <li> <em>Nisi Ut Aliquip Exea</em> <i class="fa fa-pencil"></i> <i class="fa fa-close"></i> <span>$240</span> </li>
+                                                    <li> <em>Commodo Consequat</em> <i class="fa fa-pencil"></i> <i class="fa fa-close"></i> <span>$240</span> </li>
+                                                    <li> <em>Duis Aute Cirure Dolor</em> <i class="fa fa-pencil"></i> <i class="fa fa-close"></i> <span>$240</span> </li>
+                                                </ul>
+                                            </div>
+                                            <div class="tg-servicesholder">
+                                                <div class="tg-mainservice"> <em>Cardiac Rehabilitation</em> <i class="fa fa-pencil"></i> <i class="fa fa-close"></i> </div>
+                                                <ul class="tg-themelist tg-liststyledot tg-listdatastyle tg-childservices">
+                                                    <li> <em>Voluptate Velit</em> <i class="fa fa-pencil"></i> <i class="fa fa-close"></i> <span>$240</span> </li>
+                                                    <li> <em>Esse Cillum Dolore</em> <i class="fa fa-pencil"></i> <i class="fa fa-close"></i> <span>$240</span> </li>
+                                                    <li> <em>Eu Fugiat Nulla Pariatur</em> <i class="fa fa-pencil"></i> <i class="fa fa-close"></i> <span>$240</span> </li>
+                                                    <li> <em>Excepteur Sint Occaeca</em> <i class="fa fa-pencil"></i> <i class="fa fa-close"></i> <span>$240</span> </li>
+                                                    <li> <em>Cupidatat Non Proident</em> <i class="fa fa-pencil"></i> <i class="fa fa-close"></i> <span>$240</span> </li>
+                                                </ul>
+                                            </div>
+                                            <div class="tg-servicesholder">
+                                                <div class="tg-mainservice"> <em>Therapy</em> <i class="fa fa-pencil"></i> <i class="fa fa-close"></i> </div>
+                                                <ul class="tg-themelist tg-liststyledot tg-listdatastyle tg-childservices">
+                                                    <li> <em>Deserunt Mollit</em> <i class="fa fa-pencil"></i> <i class="fa fa-close"></i> <span>$240</span> </li>
+                                                    <li> <em>Anim Id Est Laborum</em> <i class="fa fa-pencil"></i> <i class="fa fa-close"></i> <span>$240</span> </li>
+                                                    <li> <em>Sed Ut Perspiciatis</em> <i class="fa fa-pencil"></i> <i class="fa fa-close"></i> <span>$240</span> </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tg-updateall">
+                                    <span class="tg-note">* Click <strong>update all changes</strong> to update latest added detail (s).</span>
+                                    <button class="tg-btn" type="submit">update now</button>
+                                </div>
+                            </div>
+
+                            @*7 tab End*@
+
+
+                            @*8rd tab Start*@
+                            <div role="tabpanel" class="tab-pane" id="Result">
+                                <div class="tg-dashboardbox">
+
+
+                                    <div class="tg-dashboardboxtitle">
+                                        <h3>Result</h3>
+                                        
+
+                                    </div>
+
+                                    <div class="col-sm-12 col-xs-12 tg-columnpadding">
+                                        <textarea name="Complaints" id="Complaints" class="form-control"></textarea>
+                                    </div>
+                                </div>
+                                <div class="tg-updateall">
+                                    <span class="tg-note">* Click <strong>update all changes</strong> to update latest added detail (s).</span>
+                                    <button class="tg-btn" type="submit">update now</button>
+                                </div>
+                            </div>
+                            @*8rd tab End*@
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<!--************************************
+            Main End
+*************************************-->

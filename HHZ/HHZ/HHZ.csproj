@@ -1,0 +1,805 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{46543703-B77F-48B5-978E-640F0DF570FF}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HHZ</RootNamespace>
+    <AssemblyName>HHZ</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.6.4\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.6.4\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.6.4\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.6.4\lib\net45\Microsoft.AI.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.6.4\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.6.4\lib\net46\Microsoft.ApplicationInsights.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.TelemetryCorrelation, Version=1.0.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.TelemetryCorrelation.1.0.3\lib\net45\Microsoft.AspNet.TelemetryCorrelation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.5.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.6\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.6\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.6\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.6\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.6\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.6\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.6\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.6\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.6\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.2\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.2\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.2\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.4.0.0\lib\net451\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.4.0.0\lib\net451\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.4.0.0\lib\net451\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.4.0.0\lib\net451\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.4.0.0\lib\net451\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.4.0.0\lib\net451\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.4.0.0\lib\net451\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.4.0.0\lib\net451\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.4.0.0\lib\net451\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.4.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Doctor\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Doctor\DoctorAreaRegistration.cs" />
+    <Compile Include="Areas\Patient\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Patient\PatientAreaRegistration.cs" />
+    <Compile Include="Common\ApplicationConstants.cs" />
+    <Compile Include="Common\Extensions\IdentityExtensions.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\Class1.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Data\ApplicationDbContext.cs" />
+    <Compile Include="Data\ClinicInfo.cs" />
+    <Compile Include="Data\ClinicTime.cs" />
+    <Compile Include="Data\Doctor.cs" />
+    <Compile Include="Data\DoctorExperience.cs" />
+    <Compile Include="Data\DoctorSpecialization.cs" />
+    <Compile Include="Data\DoctorType.cs" />
+    <Compile Include="Data\DoctorQualification.cs" />
+    <Compile Include="Data\Parameter.cs" />
+    <Compile Include="Data\ParameterValues.cs" />
+    <Compile Include="Data\Patient.cs" />
+    <Compile Include="Data\PatientFamilyHistory.cs" />
+    <Compile Include="Data\PatientLabTest.cs" />
+    <Compile Include="Data\PatientPastHistory.cs" />
+    <Compile Include="Data\PatientPqrs.cs" />
+    <Compile Include="Data\PatientReportDetail.cs" />
+    <Compile Include="Data\PatientSign.cs" />
+    <Compile Include="Data\PatientSymptom.cs" />
+    <Compile Include="Data\Sign.cs" />
+    <Compile Include="Data\SignsValue.cs" />
+    <Compile Include="Data\Specialization.cs" />
+    <Compile Include="Data\Symptom.cs" />
+    <Compile Include="Data\SymptomMedicine.cs" />
+    <Compile Include="Data\Test.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808062023127_Initial.cs" />
+    <Compile Include="Migrations\201808062023127_Initial.Designer.cs">
+      <DependentUpon>201808062023127_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808120624384_DoctorComplete.cs" />
+    <Compile Include="Migrations\201808120624384_DoctorComplete.Designer.cs">
+      <DependentUpon>201808120624384_DoctorComplete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808120711492_UpdateDoctor.cs" />
+    <Compile Include="Migrations\201808120711492_UpdateDoctor.Designer.cs">
+      <DependentUpon>201808120711492_UpdateDoctor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808120722112_UpdateDoctor1.cs" />
+    <Compile Include="Migrations\201808120722112_UpdateDoctor1.Designer.cs">
+      <DependentUpon>201808120722112_UpdateDoctor1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808130803150_UpdateDoctor2.cs" />
+    <Compile Include="Migrations\201808130803150_UpdateDoctor2.Designer.cs">
+      <DependentUpon>201808130803150_UpdateDoctor2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808130914478_PopulateDoctorTypes.cs" />
+    <Compile Include="Migrations\201808130914478_PopulateDoctorTypes.Designer.cs">
+      <DependentUpon>201808130914478_PopulateDoctorTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808271004357_Signs.cs" />
+    <Compile Include="Migrations\201808271004357_Signs.Designer.cs">
+      <DependentUpon>201808271004357_Signs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808271009216_TestRelatedTables.cs" />
+    <Compile Include="Migrations\201808271009216_TestRelatedTables.Designer.cs">
+      <DependentUpon>201808271009216_TestRelatedTables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808271017033_Symptom.cs" />
+    <Compile Include="Migrations\201808271017033_Symptom.Designer.cs">
+      <DependentUpon>201808271017033_Symptom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809200345270_CorrectSpellingMaritalStatus.cs" />
+    <Compile Include="Migrations\201809200345270_CorrectSpellingMaritalStatus.Designer.cs">
+      <DependentUpon>201809200345270_CorrectSpellingMaritalStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809210331412_AddPatient.cs" />
+    <Compile Include="Migrations\201809210331412_AddPatient.Designer.cs">
+      <DependentUpon>201809210331412_AddPatient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809210336339_JoinPatientIdentyTable.cs" />
+    <Compile Include="Migrations\201809210336339_JoinPatientIdentyTable.Designer.cs">
+      <DependentUpon>201809210336339_JoinPatientIdentyTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809210341567_AddPatientSign.cs" />
+    <Compile Include="Migrations\201809210341567_AddPatientSign.Designer.cs">
+      <DependentUpon>201809210341567_AddPatientSign.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809210351303_UpdatePatientSign.cs" />
+    <Compile Include="Migrations\201809210351303_UpdatePatientSign.Designer.cs">
+      <DependentUpon>201809210351303_UpdatePatientSign.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809210405192_JoinPatientWithSign.cs" />
+    <Compile Include="Migrations\201809210405192_JoinPatientWithSign.Designer.cs">
+      <DependentUpon>201809210405192_JoinPatientWithSign.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809210415410_AddPatientFamilyHistory.cs" />
+    <Compile Include="Migrations\201809210415410_AddPatientFamilyHistory.Designer.cs">
+      <DependentUpon>201809210415410_AddPatientFamilyHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809210419276_JoinPatientWithFamilyHistory.cs" />
+    <Compile Include="Migrations\201809210419276_JoinPatientWithFamilyHistory.Designer.cs">
+      <DependentUpon>201809210419276_JoinPatientWithFamilyHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809210424541_AddPatientPqrs.cs" />
+    <Compile Include="Migrations\201809210424541_AddPatientPqrs.Designer.cs">
+      <DependentUpon>201809210424541_AddPatientPqrs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809210429023_JoinPatientWithPatientPqrs.cs" />
+    <Compile Include="Migrations\201809210429023_JoinPatientWithPatientPqrs.Designer.cs">
+      <DependentUpon>201809210429023_JoinPatientWithPatientPqrs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809210438319_AddPatientLabTest.cs" />
+    <Compile Include="Migrations\201809210438319_AddPatientLabTest.Designer.cs">
+      <DependentUpon>201809210438319_AddPatientLabTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809210448498_AddPatientReportDetail.cs" />
+    <Compile Include="Migrations\201809210448498_AddPatientReportDetail.Designer.cs">
+      <DependentUpon>201809210448498_AddPatientReportDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809210511282_JoinPatientLabTestWithReport.cs" />
+    <Compile Include="Migrations\201809210511282_JoinPatientLabTestWithReport.Designer.cs">
+      <DependentUpon>201809210511282_JoinPatientLabTestWithReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809210526338_JoinPatientWithPatientLabTest.cs" />
+    <Compile Include="Migrations\201809210526338_JoinPatientWithPatientLabTest.Designer.cs">
+      <DependentUpon>201809210526338_JoinPatientWithPatientLabTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809210710071_AddPatientPastHistory.cs" />
+    <Compile Include="Migrations\201809210710071_AddPatientPastHistory.Designer.cs">
+      <DependentUpon>201809210710071_AddPatientPastHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809210721328_JoinPatientWithPastHistory.cs" />
+    <Compile Include="Migrations\201809210721328_JoinPatientWithPastHistory.Designer.cs">
+      <DependentUpon>201809210721328_JoinPatientWithPastHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809210730054_AddPatientSymptom.cs" />
+    <Compile Include="Migrations\201809210730054_AddPatientSymptom.Designer.cs">
+      <DependentUpon>201809210730054_AddPatientSymptom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809210732139_JoinPatientWithSymptom.cs" />
+    <Compile Include="Migrations\201809210732139_JoinPatientWithSymptom.Designer.cs">
+      <DependentUpon>201809210732139_JoinPatientWithSymptom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Services\DoctorService.cs" />
+    <Compile Include="ViewModels\ExternalLoginConfirmationViewModel.cs" />
+    <Compile Include="ViewModels\AddPhoneNumberViewModel.cs" />
+    <Compile Include="Models\ApplicationUser.cs" />
+    <Compile Include="ViewModels\ChangePasswordViewModel.cs" />
+    <Compile Include="ViewModels\ConfigureTwoFactorViewModel.cs" />
+    <Compile Include="ViewModels\ExternalLoginListViewModel.cs" />
+    <Compile Include="ViewModels\FactorViewModel.cs" />
+    <Compile Include="ViewModels\ForgotPasswordViewModel.cs" />
+    <Compile Include="ViewModels\ForgotViewModel.cs" />
+    <Compile Include="ViewModels\LoginViewModel.cs" />
+    <Compile Include="ViewModels\ManageLoginsViewModel.cs" />
+    <Compile Include="ViewModels\IndexViewModel.cs" />
+    <Compile Include="ViewModels\RegisterViewModel.cs" />
+    <Compile Include="ViewModels\ResetPasswordViewModel.cs" />
+    <Compile Include="ViewModels\SendCodeViewModel.cs" />
+    <Compile Include="ViewModels\SetPasswordViewModel.cs" />
+    <Compile Include="ViewModels\VerifyCodeViewModel.cs" />
+    <Compile Include="ViewModels\VerifyPhoneNumberViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+    <Compile Include="Views\Shared\test.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-chosen.css" />
+    <Content Include="Content\bootstrap-timepicker.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\color.css" />
+    <Content Include="Content\customScrollbar.css" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\fullcalendar.min.css" />
+    <Content Include="Content\jquery-ui.css" />
+    <Content Include="Content\jquery.countdown.css" />
+    <Content Include="Content\main.css" />
+    <Content Include="Content\normalize.css" />
+    <Content Include="Content\owl.carousel.css" />
+    <Content Include="Content\owl.theme.css" />
+    <Content Include="Content\prettyPhoto.css" />
+    <Content Include="Content\responsive.css" />
+    <Content Include="Content\transitions.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Areas\Doctor\Views\web.config" />
+    <Content Include="Areas\Patient\Views\web.config" />
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="images\404-img.jpg" />
+    <Content Include="images\AjaxLoader.gif" />
+    <Content Include="images\attachments\img-01.jpg" />
+    <Content Include="images\attachments\img-02.jpg" />
+    <Content Include="images\attachments\img-03.jpg" />
+    <Content Include="images\attachments\img-04.jpg" />
+    <Content Include="images\badges\badge-01.png" />
+    <Content Include="images\badges\badge-02.png" />
+    <Content Include="images\badges\badge-03.png" />
+    <Content Include="images\badges\badge-04.png" />
+    <Content Include="images\badges\badge-05.png" />
+    <Content Include="images\badges\badge-06.png" />
+    <Content Include="images\badges\badge-07.png" />
+    <Content Include="images\badges\badge-08.png" />
+    <Content Include="images\badges\badge-09.png" />
+    <Content Include="images\badges\badge-10.png" />
+    <Content Include="images\badges\badge-11.png" />
+    <Content Include="images\badges\badge-12.png" />
+    <Content Include="images\banner\img-01.jpg" />
+    <Content Include="images\banner\img-02.jpg" />
+    <Content Include="images\bg-commingsoon.jpg" />
+    <Content Include="images\brands\img-01.png" />
+    <Content Include="images\brands\img-02.png" />
+    <Content Include="images\brands\img-03.png" />
+    <Content Include="images\brands\img-04.png" />
+    <Content Include="images\close2.png" />
+    <Content Include="images\close3.png" />
+    <Content Include="images\directpost\img-01.jpg" />
+    <Content Include="images\directpost\img-02.jpg" />
+    <Content Include="images\directpost\img-03.jpg" />
+    <Content Include="images\directpost\img-04.jpg" />
+    <Content Include="images\directpost\img-05.jpg" />
+    <Content Include="images\directpost\img-06.jpg" />
+    <Content Include="images\directpost\img-07.jpg" />
+    <Content Include="images\directpost\img-08.jpg" />
+    <Content Include="images\directpost\img-09.jpg" />
+    <Content Include="images\directpost\img-10.jpg" />
+    <Content Include="images\directpost\img-11.jpg" />
+    <Content Include="images\directpost\img-12.jpg" />
+    <Content Include="images\directpost\img-13.jpg" />
+    <Content Include="images\gallery\large\img-01.jpg" />
+    <Content Include="images\gallery\large\img-02.jpg" />
+    <Content Include="images\gallery\large\img-03.jpg" />
+    <Content Include="images\gallery\large\img-04.jpg" />
+    <Content Include="images\gallery\large\img-05.jpg" />
+    <Content Include="images\gallery\large\img-06.jpg" />
+    <Content Include="images\gallery\large\img-07.jpg" />
+    <Content Include="images\gallery\large\img-08.jpg" />
+    <Content Include="images\gallery\large\img-09.jpg" />
+    <Content Include="images\gallery\large\img-10.jpg" />
+    <Content Include="images\gallery\small\img-01.jpg" />
+    <Content Include="images\gallery\small\img-02.jpg" />
+    <Content Include="images\gallery\small\img-03.jpg" />
+    <Content Include="images\gallery\small\img-04.jpg" />
+    <Content Include="images\gallery\small\img-05.jpg" />
+    <Content Include="images\gallery\small\img-06.jpg" />
+    <Content Include="images\gallery\small\img-07.jpg" />
+    <Content Include="images\gallery\small\img-08.jpg" />
+    <Content Include="images\gallery\small\img-09.jpg" />
+    <Content Include="images\gallery\small\img-10.jpg" />
+    <Content Include="images\gloweffect.png" />
+    <Content Include="images\grabbing.png" />
+    <Content Include="images\icons\icon-02.png" />
+    <Content Include="images\icons\icon-03.png" />
+    <Content Include="images\icons\icon-04.png" />
+    <Content Include="images\icons\icon-05.png" />
+    <Content Include="images\icons\icon-06.png" />
+    <Content Include="images\icons\icon-07.png" />
+    <Content Include="images\icons\icon-08.png" />
+    <Content Include="images\icons\icon-09.png" />
+    <Content Include="images\icons\icon-10.png" />
+    <Content Include="images\icons\icon-11.png" />
+    <Content Include="images\icons\icon-12.png" />
+    <Content Include="images\icons\icon-13.png" />
+    <Content Include="images\icons\icon-14.png" />
+    <Content Include="images\icons\icon-15.png" />
+    <Content Include="images\icons\icon-16.png" />
+    <Content Include="images\icons\icon-17.png" />
+    <Content Include="images\icons\icon-18.png" />
+    <Content Include="images\icons\icon-19.png" />
+    <Content Include="images\icons\icon-20.png" />
+    <Content Include="images\icons\icon-21.png" />
+    <Content Include="images\icons\icon-22.png" />
+    <Content Include="images\icons\icon-23.png" />
+    <Content Include="images\icons\icon-24.png" />
+    <Content Include="images\icons\icon-25.png" />
+    <Content Include="images\icons\icon-26.png" />
+    <Content Include="images\icons\icon-27.png" />
+    <Content Include="images\icons\icon-28.png" />
+    <Content Include="images\icons\icon-29.png" />
+    <Content Include="images\icons\icon-30.png" />
+    <Content Include="images\icons\icon-31.png" />
+    <Content Include="images\icons\icon-32.png" />
+    <Content Include="images\icons\icon-33.png" />
+    <Content Include="images\icons\icon-34.png" />
+    <Content Include="images\icons\icon-35.jpg" />
+    <Content Include="images\icons\icon-35.png" />
+    <Content Include="images\icons\icon-36.png" />
+    <Content Include="images\icons\icon-37.png" />
+    <Content Include="images\icons\icon-38.png" />
+    <Content Include="images\icons\icon-39.png" />
+    <Content Include="images\icons\icon-40.png" />
+    <Content Include="images\icons\icon-41.png" />
+    <Content Include="images\icons\icon-doc.png" />
+    <Content Include="images\icons\icon-pdf.png" />
+    <Content Include="images\img-04.png" />
+    <Content Include="images\logo.jpeg" />
+    <Content Include="images\logo2.jpeg" />
+    <Content Include="images\logos.jpeg" />
+    <Content Include="images\mCSB_buttons.html" />
+    <Content Include="images\midlinktimeline\img-01.jpg" />
+    <Content Include="images\midlinktimeline\img-02.jpg" />
+    <Content Include="images\midlinktimeline\img-03.jpg" />
+    <Content Include="images\midlinktimeline\img-04.jpg" />
+    <Content Include="images\parallax\bgparallax-02.jpg" />
+    <Content Include="images\parallax\bgparallax-03.jpg" />
+    <Content Include="images\parallax\bgparallax-04.jpg" />
+    <Content Include="images\placeholder\img-01.jpg" />
+    <Content Include="images\placeholder\img-02.jpg" />
+    <Content Include="images\placeholder\img-03.jpg" />
+    <Content Include="images\post\blogpostdetail.jpg" />
+    <Content Include="images\post\img-01.jpg" />
+    <Content Include="images\post\img-02.jpg" />
+    <Content Include="images\post\img-03.jpg" />
+    <Content Include="images\post\img-04.jpg" />
+    <Content Include="images\post\img-05.jpg" />
+    <Content Include="images\post\img-06.jpg" />
+    <Content Include="images\post\img-07.jpg" />
+    <Content Include="images\post\img-08.jpg" />
+    <Content Include="images\post\img-09.jpg" />
+    <Content Include="images\post\img-10.jpg" />
+    <Content Include="images\post\img-11.jpg" />
+    <Content Include="images\post\img-12.jpg" />
+    <Content Include="images\post\img-13.jpg" />
+    <Content Include="images\sectionline.svg" />
+    <Content Include="images\strip-1.jpg" />
+    <Content Include="images\strip.jpg" />
+    <Content Include="images\thumbnails\img-01.jpg" />
+    <Content Include="images\thumbnails\img-02.jpg" />
+    <Content Include="images\thumbnails\img-03.jpg" />
+    <Content Include="images\thumbnails\img-04.jpg" />
+    <Content Include="images\thumbnails\img-05.jpg" />
+    <Content Include="images\thumbnails\img-06.jpg" />
+    <Content Include="images\thumbnails\img-07.jpg" />
+    <Content Include="images\thumbnails\img-08.jpg" />
+    <Content Include="images\thumbnails\img-09.jpg" />
+    <Content Include="images\thumbnails\img-10.jpg" />
+    <Content Include="images\thumbnails\img-11.jpg" />
+    <Content Include="images\thumbnails\img-12.jpg" />
+    <Content Include="images\thumbnails\img-13.jpg" />
+    <Content Include="images\thumbnails\img-14.jpg" />
+    <Content Include="images\thumbnails\img-15.jpg" />
+    <Content Include="images\thumbnails\img-16.jpg" />
+    <Content Include="images\thumbnails\img-17.jpg" />
+    <Content Include="images\thumbnails\img-18.jpg" />
+    <Content Include="images\thumbnails\img-19.jpg" />
+    <Content Include="images\thumbnails\img-20.jpg" />
+    <Content Include="images\thumbnails\img-21.jpg" />
+    <Content Include="images\thumbnails\img-22.jpg" />
+    <Content Include="images\thumbnails\img-23.jpg" />
+    <Content Include="images\ui-icons_444444_256x240.html" />
+    <Content Include="images\ui-icons_555555_256x240.html" />
+    <Content Include="images\ui-icons_777620_256x240.html" />
+    <Content Include="images\ui-icons_777777_256x240.html" />
+    <Content Include="images\ui-icons_cc0000_256x240.html" />
+    <Content Include="images\ui-icons_ffffff_256x240.html" />
+    <Content Include="Scripts\appear.js" />
+    <Content Include="Scripts\bootstrap-add-clear.min.js" />
+    <Content Include="Scripts\bootstrap-timepicker.min.js" />
+    <Content Include="Scripts\chosen.jquery.js" />
+    <Content Include="Scripts\collapse.js" />
+    <Content Include="Scripts\countTo.js" />
+    <Content Include="Scripts\customScrollbar.min.js" />
+    <Content Include="Scripts\final-countdown.js" />
+    <Content Include="Scripts\fullcalendar.min.js" />
+    <Content Include="Scripts\gmap3.js" />
+    <Content Include="Scripts\isotope.pkgd.js" />
+    <Content Include="Scripts\jquery-ui.js" />
+    <Content Include="Scripts\jquery.countdown.js" />
+    <Content Include="Scripts\kinetic.js" />
+    <Content Include="Scripts\loader.js" />
+    <Content Include="Scripts\main.js" />
+    <Content Include="Scripts\mapclustering\infobox.js" />
+    <Content Include="Scripts\mapclustering\map.js" />
+    <Content Include="Scripts\mapclustering\markerclusterer.min.js" />
+    <Content Include="Scripts\moment.min.js" />
+    <Content Include="Scripts\owl.carousel.min.js" />
+    <Content Include="Scripts\packery-mode.js" />
+    <Content Include="Scripts\parallax.js" />
+    <Content Include="Scripts\prettyPhoto.js" />
+    <Content Include="Scripts\readmore.js" />
+    <Content Include="Scripts\svg-injector.js" />
+    <Content Include="Scripts\vendor\bootstrap.js" />
+    <Content Include="Scripts\vendor\bootstrap.min.js" />
+    <Content Include="Scripts\vendor\jquery-library.js" />
+    <Content Include="Scripts\vendor\modernizr-2.8.3-respond-1.4.2.min.js" />
+    <Content Include="Scripts\vendor\npm.js" />
+    <Content Include="Views\Shared\test.html" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\SendCode.cshtml" />
+    <Content Include="Views\Account\VerifyCode.cshtml" />
+    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
+    <Content Include="Views\Manage\ChangePassword.cshtml" />
+    <Content Include="Views\Manage\Index.cshtml" />
+    <Content Include="Views\Manage\ManageLogins.cshtml" />
+    <Content Include="Views\Manage\SetPassword.cshtml" />
+    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Areas\Doctor\Models\" />
+    <Folder Include="Areas\Patient\Models\" />
+    <Folder Include="Controllers\api\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Doctor\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Doctor\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Doctor\Views\Home\Dashboard.cshtml" />
+    <Content Include="Areas\Doctor\Views\Home\ProfileSetting.cshtml" />
+    <Content Include="Areas\Doctor\Views\Home\JobLoction.cshtml" />
+    <Content Include="Areas\Doctor\Views\Home\PrivateMessages.cshtml" />
+    <Content Include="Areas\Doctor\Views\Home\Appointment.cshtml" />
+    <Content Include="Areas\Doctor\Views\Home\AppointmentSetting.cshtml" />
+    <Content Include="Areas\Doctor\Views\Home\FavoritListing.cshtml" />
+    <Content Include="Areas\Doctor\Views\Home\Invoice.cshtml" />
+    <Content Include="Areas\Doctor\Views\Home\UpdatePackage.cshtml" />
+    <Content Include="Areas\Doctor\Views\Home\SecuritySettings.cshtml" />
+    <Content Include="Areas\Doctor\Views\Home\PrivacySettings.cshtml" />
+    <Content Include="Areas\Doctor\Views\Home\NewPatient.cshtml" />
+    <Content Include="Areas\Doctor\Views\Home\ExPatient.cshtml" />
+    <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Admin\Views\Home\Dashboard.cshtml" />
+    <Content Include="Areas\Patient\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Patient\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Patient\Views\Home\Dashboard.cshtml" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="packages.config" />
+    <Content Include="Views\Home\SearchResult.cshtml" />
+    <Content Include="Views\Home\HowItsWorks.cshtml" />
+    <Content Include="Views\Home\BlogPost.cshtml" />
+    <Content Include="Views\Home\BlogPostDetail.cshtml" />
+    <Content Include="Views\Home\DoctorDetail.cshtml" />
+    <Content Include="Scripts\mapclustering\data.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201808062023127_Initial.resx">
+      <DependentUpon>201808062023127_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808120624384_DoctorComplete.resx">
+      <DependentUpon>201808120624384_DoctorComplete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808120711492_UpdateDoctor.resx">
+      <DependentUpon>201808120711492_UpdateDoctor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808120722112_UpdateDoctor1.resx">
+      <DependentUpon>201808120722112_UpdateDoctor1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808130803150_UpdateDoctor2.resx">
+      <DependentUpon>201808130803150_UpdateDoctor2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808130914478_PopulateDoctorTypes.resx">
+      <DependentUpon>201808130914478_PopulateDoctorTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808271004357_Signs.resx">
+      <DependentUpon>201808271004357_Signs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808271009216_TestRelatedTables.resx">
+      <DependentUpon>201808271009216_TestRelatedTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808271017033_Symptom.resx">
+      <DependentUpon>201808271017033_Symptom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809200345270_CorrectSpellingMaritalStatus.resx">
+      <DependentUpon>201809200345270_CorrectSpellingMaritalStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809210331412_AddPatient.resx">
+      <DependentUpon>201809210331412_AddPatient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809210336339_JoinPatientIdentyTable.resx">
+      <DependentUpon>201809210336339_JoinPatientIdentyTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809210341567_AddPatientSign.resx">
+      <DependentUpon>201809210341567_AddPatientSign.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809210351303_UpdatePatientSign.resx">
+      <DependentUpon>201809210351303_UpdatePatientSign.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809210405192_JoinPatientWithSign.resx">
+      <DependentUpon>201809210405192_JoinPatientWithSign.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809210415410_AddPatientFamilyHistory.resx">
+      <DependentUpon>201809210415410_AddPatientFamilyHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809210419276_JoinPatientWithFamilyHistory.resx">
+      <DependentUpon>201809210419276_JoinPatientWithFamilyHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809210424541_AddPatientPqrs.resx">
+      <DependentUpon>201809210424541_AddPatientPqrs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809210429023_JoinPatientWithPatientPqrs.resx">
+      <DependentUpon>201809210429023_JoinPatientWithPatientPqrs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809210438319_AddPatientLabTest.resx">
+      <DependentUpon>201809210438319_AddPatientLabTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809210448498_AddPatientReportDetail.resx">
+      <DependentUpon>201809210448498_AddPatientReportDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809210511282_JoinPatientLabTestWithReport.resx">
+      <DependentUpon>201809210511282_JoinPatientLabTestWithReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809210526338_JoinPatientWithPatientLabTest.resx">
+      <DependentUpon>201809210526338_JoinPatientWithPatientLabTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809210710071_AddPatientPastHistory.resx">
+      <DependentUpon>201809210710071_AddPatientPastHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809210721328_JoinPatientWithPastHistory.resx">
+      <DependentUpon>201809210721328_JoinPatientWithPastHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809210730054_AddPatientSymptom.resx">
+      <DependentUpon>201809210730054_AddPatientSymptom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809210732139_JoinPatientWithSymptom.resx">
+      <DependentUpon>201809210732139_JoinPatientWithSymptom.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50350</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:50350/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

@@ -1,0 +1,315 @@
+﻿
+@{
+    ViewBag.Title = "JobLoction";
+}
+
+<!--************************************
+                Main Start
+*************************************-->
+<main id="tg-main" class="tg-main tg-haslayout">
+    <div class="container">
+        <div class="row">
+            <div id="tg-content" class="tg-content tg-dashboard">
+                <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12 pull-left">
+                    <div class="tg-widgetdashboard">
+                        <div class="tg-widgetprofile">
+                            <figure class="tg-directpostimg">
+                                <a href="#"><img src="~/images/thumbnails/img-20.jpg" alt="image description"></a>
+                                <figcaption>
+                                    <a class="tg-usericon tg-iconfeatured" href="#">
+                                        <em class="tg-usericonholder">
+                                            <i class="fa fa-bolt"></i>
+                                            <span>featured</span>
+                                        </em>
+                                    </a>
+                                    <a class="tg-usericon tg-iconvarified" href="#">
+                                        <em class="tg-usericonholder">
+                                            <i class="fa fa-shield"></i>
+                                            <span>varified</span>
+                                        </em>
+                                    </a>
+                                </figcaption>
+                            </figure>
+                            <div class="tg-directposthead">
+                                <h3><a href="#">Dr. Steve Northrop</a></h3>
+                                <div class="tg-subjects">MDS - Paedodontics &amp; Preventive Dentistry</div>
+                                <ul class="tg-metadata">
+                                    <li><span class="tg-stars"><span></span></span></li>
+                                    <li><a href="#"><i class="fa fa-thumbs-o-up"></i> 99% (1009 votes)</a></li>
+                                </ul>
+                            </div>
+                            <a class="tg-btn tg-btn-lg" href="@Url.Action("ProfileSetting","Home")">Edit Profile</a>
+
+                        </div>
+                        <nav id="tg-dashboardnav" class="tg-dashboardnav">
+                            <ul>
+                                <li>
+                                    <a href="@Url.Action("Dashboard","Home")">
+                                        <i class="fa fa-line-chart"></i>
+                                        <span>Insights</span>
+                                    </a>
+                                </li>
+
+                                <li class="tg-warningmessage">
+                                    <a href="@Url.Action("ProfileSetting","Home")">
+                                        <i class="fa fa-user"></i>
+                                        <span>Profile Settings</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("JobLoction","Home")">
+                                        <i class="fa fa-location-arrow"></i>
+                                        <span>Job Locations</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("PrivateMessages","Home")">
+                                        <i class="fa fa-envelope-o"></i>
+                                        <span>Private Messages</span>
+                                    </a>
+                                </li>
+                                <li class="tg-successmessage tg-active">
+                                    <a href="@Url.Action("Appointment","Home")">
+                                        <i class="fa fa-calendar-check-o"></i>
+                                        <span>Appointments</span>
+                                    </a>
+                                </li>
+                                <li class="tg-errormessage">
+                                    <a href="@Url.Action("AppointmentSetting","Home")">
+                                        <i class="fa fa-gear"></i>
+                                        <span>Appointment Settings</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("FavoritListing","Home")">
+                                        <i class="fa fa-heart"></i>
+                                        <span>Favourite Listings</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action(Url.Action("Invoice","Home"))">
+                                        <i class="fa fa-clone"></i>
+                                        <span>Invoices</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("UpdatePackage","Home")">
+                                        <i class="fa fa-arrow-up"></i>
+                                        <span>Update Package</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("SecuritySettings","Home")">
+                                        <i class="fa fa-gears"></i>
+                                        <span>Security Settings</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("PrivacySettings","Home")">
+                                        <i class="fa fa-eye"></i>
+                                        <span>Privacy Settings</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-sign-out"></i>
+                                        <span>Logout</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+
+                    </div>
+                    <div class="tg-widgetdashboard">
+                        <div class="tg-dashboardnotification tg-pkgexpirey"><span>13 days</span>silver package Expire in</div>
+                    </div>
+                    <div class="tg-widgetdashboard">
+                        <div class="tg-banneradd">
+                            <figure><a href="#"><img src="~/images/placeholder/img-01.jpg" alt="image description"></a></figure>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-9 col-md-8 col-sm-8 col-xs-12 pull-right">
+                    <div class="tg-dashboardjobslocations">
+                        <div class="tg-dashboardbox">
+                            <div class="tg-dashboardboxtitle">
+                                <h2>Job Locations</h2>
+                            </div>
+                            <div class="tg-box tg-profilephoto">
+                                <div class="row tg-rowmargin">
+                                    <div class="col-md-6 col-sm-12 col-xs-12 tg-columnpadding">
+                                        <div class="form-group tg-formgroup">
+                                            <div class="tg-companylistdropdown">
+                                                <a id="tg-btnlisttoggle" class="tg-btnlisttoggle" href="javascript:void(0);">Select/Type Company</a>
+                                                <ul id="tg-companylist" class="tg-companylist">
+                                                    <li>
+                                                        <figure><a href="#"><img src="~/images/thumbnails/img-01.jpg" alt="image description"></a></figure>
+                                                        <div class="tg-companydata">
+                                                            <h4><a href="#">Triona Spa &amp; Massage Center</a></h4>
+                                                            <span>MBBS, MRCOG, FRCOG, CCST , UK – Gynecologist</span>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <figure><a href="#"><img src="~/images/thumbnails/img-02.jpg" alt="image description"></a></figure>
+                                                        <div class="tg-companydata">
+                                                            <h4><a href="#">Life Saver Pharmacy</a></h4>
+                                                            <span>Local Pharmaceutical Council (LPhC)</span>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <figure><a href="#"><img src="~/images/thumbnails/img-03.jpg" alt="image description"></a></figure>
+                                                        <div class="tg-companydata">
+                                                            <h4><a href="#">Manchester Eye Hospital</a></h4>
+                                                            <span>Manchester Trust Hospital</span>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <figure><a href="#"><img src="~/images/thumbnails/img-04.jpg" alt="image description"></a></figure>
+                                                        <div class="tg-companydata">
+                                                            <h4><a href="#">Trim Down Fitness Studio</a></h4>
+                                                            <span>Health &amp; Beauty &amp; Fitness</span>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-6 col-xs-12 tg-columnpadding">
+                                        <div class="form-group tg-formgroup">
+                                            <button class="tg-btn tg-btn-lg" type="submit" data-toggle="modal" data-target="#tg-addjobdetailinfo">Add Now</button>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-6 col-xs-12 tg-columnpadding">
+                                        <div class="form-group tg-formgroup">
+                                            <button type="submit" class="tg-btn tg-btn-lg" data-toggle="modal" data-target="#tg-addcompany">Not In List? Add New</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tg-dashboardboxtitle">
+                                <h2>Available Locations</h2>
+                            </div>
+                            <div class="tg-box tg-availablelocation">
+                                <div class="tg-servicelocations">
+                                    <div class="tg-servicelocation">
+                                        <div class="tg-directpost">
+                                            <figure class="tg-directpostimg">
+                                                <a href="#"><img src="~/images/directpost/img-01.jpg" alt="image description"></a>
+                                                <figcaption>
+                                                    <a class="tg-usericon tg-iconfeatured" href="#">
+                                                        <em class="tg-usericonholder">
+                                                            <i class="fa fa-bolt"></i>
+                                                            <span>featured</span>
+                                                        </em>
+                                                    </a>
+                                                    <a class="tg-usericon tg-iconvarified" href="#">
+                                                        <em class="tg-usericonholder">
+                                                            <i class="fa fa-shield"></i>
+                                                            <span>varified</span>
+                                                        </em>
+                                                    </a>
+                                                </figcaption>
+                                            </figure>
+                                            <div class="tg-directinfo">
+                                                <div class="tg-directposthead">
+                                                    <h3><a href="#">Life Saver Pharmacy</a></h3>
+                                                    <div class="tg-subjects">Local Pharmaceutical Council (LPhC)</div>
+                                                    <ul class="tg-metadata">
+                                                        <li><span class="tg-stars"><span></span></span></li>
+                                                        <li><a href="#"><i class="fa fa-heart tg-like"></i></a></li>
+                                                        <li><a href="#"><i class="fa fa-thumbs-o-up"></i> 99% (1009 votes)</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="tg-description" style="max-height: none;">
+                                                    <p>Consectetur adipisicing elit eiusmod tempor iidunt utabor dolore eiusmod tempor iidunt.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <ul class="tg-servicesinfo">
+                                            <li>
+                                                <span>Fee</span>
+                                                <span>$260 <i class="fa fa-exclamation-circle tg-tooltip" data-toggle="tooltip" data-placement="top" title="" data-original-title="4.85 average based on 423 ratings"></i></span>
+                                            </li>
+                                            <li>
+                                                <span>Mon - Sun</span>
+                                                <span>10:00 AM - 9:30 PM</span>
+                                            </li>
+                                            <li>
+                                                <span>Voice</span>
+                                                <span>+4 1245 555213 - 5</span>
+                                            </li>
+                                        </ul>
+                                        <div class="tg-btnjoblocationeditdelete">
+                                            <button type="submit" data-toggle="modal" data-target="#tg-addjobdetailinfo"><i class="fa fa-pencil"></i></button>
+                                            <button type="submit"><i class="fa fa-minus"></i></button>
+                                        </div>
+                                    </div>
+                                    <div class="tg-servicelocation">
+                                        <div class="tg-directpost">
+                                            <figure class="tg-directpostimg">
+                                                <a href="#"><img src="~/images/directpost/img-02.jpg" alt="image description"></a>
+                                                <figcaption>
+                                                    <a class="tg-usericon tg-iconfeatured" href="#">
+                                                        <em class="tg-usericonholder">
+                                                            <i class="fa fa-bolt"></i>
+                                                            <span>featured</span>
+                                                        </em>
+                                                    </a>
+                                                    <a class="tg-usericon tg-iconvarified" href="#">
+                                                        <em class="tg-usericonholder">
+                                                            <i class="fa fa-shield"></i>
+                                                            <span>varified</span>
+                                                        </em>
+                                                    </a>
+                                                </figcaption>
+                                            </figure>
+                                            <div class="tg-directinfo">
+                                                <div class="tg-directposthead">
+                                                    <h3><a href="#">Manchester Eye Hospital</a></h3>
+                                                    <div class="tg-subjects">Manchester Trust Hospital</div>
+                                                    <ul class="tg-metadata">
+                                                        <li><span class="tg-stars"><span></span></span></li>
+                                                        <li><a href="#"><i class="fa fa-heart tg-like"></i></a></li>
+                                                        <li><a href="#"><i class="fa fa-thumbs-o-up"></i> 99% (1009 votes)</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="tg-description" style="max-height: none;">
+                                                    <p>Consectetur adipisicing elit eiusmod tempor iidunt utabor dolore eiusmod tempor iidunt.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <ul class="tg-servicesinfo">
+                                            <li>
+                                                <span>Fee</span>
+                                                <span>$260 <i class="fa fa-exclamation-circle tg-tooltip" data-toggle="tooltip" data-placement="top" title="" data-original-title="4.85 average based on 423 ratings"></i></span>
+                                            </li>
+                                            <li>
+                                                <span>Mon - Sun</span>
+                                                <span>10:00 AM - 9:30 PM</span>
+                                            </li>
+                                            <li>
+                                                <span>Voice</span>
+                                                <span>+4 1245 555213 - 5</span>
+                                            </li>
+                                        </ul>
+                                        <div class="tg-btnjoblocationeditdelete">
+                                            <button type="submit" data-toggle="modal" data-target="#tg-addjobdetailinfo"><i class="fa fa-pencil"></i></button>
+                                            <button type="submit"><i class="fa fa-minus"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tg-updateall">
+                            <span class="tg-note">* Click <strong>update all changes</strong> to update latest added detail (s).</span>
+                            <button class="tg-btn" type="submit">update now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<!--************************************
+        Main End
+*************************************-->

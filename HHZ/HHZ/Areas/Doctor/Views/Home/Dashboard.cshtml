@@ -1,0 +1,564 @@
+﻿
+@{
+    ViewBag.Title = "Dashboard";
+}
+
+
+
+@if (ViewBag.displayMenu == "Yes")
+{
+    @*<h1>Welcome Admin. Now you can create user Role.</h1>*@
+    @*<h3>
+            @Html.ActionLink("Manage Role", "Index", "Role")
+        </h3>*@
+
+
+
+}
+else
+{
+    @*<h2>  Welcome <strong>@ViewBag.Name</strong> :) .We will add user module soon </h2>*@
+}
+
+
+
+<!--************************************
+               Main Start
+       *************************************-->
+<main id="tg-main" class="tg-main tg-haslayout">
+    <div class="container">
+        <div class="row">
+            <div id="tg-content" class="tg-content tg-dashboard">
+                <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12 pull-left">
+                    <div class="tg-widgetdashboard">
+                        <div class="tg-widgetprofile">
+                            <figure class="tg-directpostimg">
+                                <a href="#"><img src="~/images/thumbnails/img-20.jpg" alt="image description"></a>
+                                <figcaption>
+                                    <a class="tg-usericon tg-iconfeatured" href="#">
+                                        <em class="tg-usericonholder">
+                                            <i class="fa fa-bolt"></i>
+                                            <span>featured</span>
+                                        </em>
+                                    </a>
+                                    <a class="tg-usericon tg-iconvarified" href="#">
+                                        <em class="tg-usericonholder">
+                                            <i class="fa fa-shield"></i>
+                                            <span>varified</span>
+                                        </em>
+                                    </a>
+                                </figcaption>
+                            </figure>
+                            <div class="tg-directposthead">
+                                <h3><a href="#">Dr. Steve Northrop</a></h3>
+                                <div class="tg-subjects">MDS - Paedodontics &amp; Preventive Dentistry</div>
+                                <ul class="tg-metadata">
+                                    <li><span class="tg-stars"><span></span></span></li>
+                                    <li><a href="#"><i class="fa fa-thumbs-o-up"></i> 99% (1009 votes)</a></li>
+                                </ul>
+                            </div>
+                            <a class="tg-btn tg-btn-lg" href="@Url.Action("ProfileSetting","Home")">Edit Profile</a>
+
+                        </div>
+                        <nav id="tg-dashboardnav" class="tg-dashboardnav">
+                            <ul>
+                                <li>
+                                    <a href="@Url.Action("Dashboard","Home")">
+                                        <i class="fa fa-line-chart"></i>
+                                        <span>Insights</span>
+                                    </a>
+                                </li>
+
+                                <li class="tg-warningmessage">
+                                    <a href="@Url.Action("ProfileSetting","Home")">
+                                        <i class="fa fa-user"></i>
+                                        <span>Profile Settings</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("JobLoction","Home")">
+                                        <i class="fa fa-location-arrow"></i>
+                                        <span>Job Locations</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("PrivateMessages","Home")">
+                                        <i class="fa fa-envelope-o"></i>
+                                        <span>Private Messages</span>
+                                    </a>
+                                </li>
+                                <li class="tg-successmessage tg-active">
+                                    <a href="@Url.Action("Appointment","Home")">
+                                        <i class="fa fa-calendar-check-o"></i>
+                                        <span>Appointments</span>
+                                    </a>
+                                </li>
+                                <li class="tg-errormessage">
+                                    <a href="@Url.Action("AppointmentSetting","Home")">
+                                        <i class="fa fa-gear"></i>
+                                        <span>Appointment Settings</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("FavoritListing","Home")">
+                                        <i class="fa fa-heart"></i>
+                                        <span>Favourite Listings</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("NewPatient","Home")">
+                                        <i class="fa fa-user"></i>
+                                        <span>New Patient</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="@Url.Action("ExPatient","Home")">
+                                        <i class="fa fa-user"></i>
+                                        <span>Ex-Patient</span>
+                                    </a>
+                                </li>
+
+
+                                <li>
+                                    <a href="@Url.Action(Url.Action("Invoice","Home"))">
+                                        <i class="fa fa-clone"></i>
+                                        <span>Invoices</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("UpdatePackage","Home")">
+                                        <i class="fa fa-arrow-up"></i>
+                                        <span>Update Package</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("SecuritySettings","Home")">
+                                        <i class="fa fa-gears"></i>
+                                        <span>Security Settings</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("PrivacySettings","Home")">
+                                        <i class="fa fa-eye"></i>
+                                        <span>Privacy Settings</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-sign-out"></i>
+                                        <span>Logout</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+
+                    </div>
+                    <div class="tg-widgetdashboard">
+                        <div class="tg-dashboardnotification tg-pkgexpirey"><span>13 days</span>silver package Expire in</div>
+                    </div>
+                    <div class="tg-widgetdashboard">
+                        <div class="tg-banneradd">
+                            <figure><a href="#"><img src="~/images/placeholder/img-01.jpg" alt="image description"></a></figure>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-9 col-md-8 col-sm-8 col-xs-12 pull-right">
+                    <div class="row">
+                        <div class="col-sm-12 col-xs-12">
+                            <div class="tg-alertmessages">
+                                <div class="alert alert-success tg-alertmessage fade in">
+                                    <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+                                    <i class="fa fa-check"></i>
+                                    <span><strong>success Message.</strong> Adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim ad minimati.</span>
+                                </div>
+                                <div class="alert alert-info tg-alertmessage fade in">
+                                    <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+                                    <i class="fa fa-commenting-o"></i>
+                                    <span><strong>info Message.</strong> Adipisicing elit, sed do eiusmod temp labore et dolore magna aliqua enim ad minimati.</span>
+                                </div>
+                                <div class="alert alert-warning tg-alertmessage fade in">
+                                    <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+                                    <i class="fa fa-exclamation-triangle"></i>
+                                    <span><strong>warning Message.</strong> Adipisicing elit, sed do eiusmod tempor  dolore magna aliqua enim ad minimati.</span>
+                                </div>
+                                <div class="alert alert-danger tg-alertmessage fade in">
+                                    <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+                                    <i class="fa fa-bug"></i>
+                                    <span><strong>Error Message.</strong> Adipisicing elit, sed do eiusmod et dolore magna aliqua enim ad minimati.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-xs-12">
+                            <div class="tg-section">
+                                <div class="tg-badgesearned">
+                                    <h3>Badges Earned</h3>
+                                    <a class="tg-refresh tg-update fa fa-refresh" href="#"></a>
+                                    <ul class="tg-badges">
+                                        <li><a class="tg-tooltip tg-tooltipwhite" href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Badge Title"><img src="~/images/badges/badge-01.png" alt="image description"></a></li>
+                                        <li><a class="tg-tooltip tg-tooltipwhite" href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Badge Title"><img src="~/images/badges/badge-02.png" alt="image description"></a></li>
+                                        <li><a class="tg-tooltip tg-tooltipwhite" href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Badge Title"><img src="~/images/badges/badge-03.png" alt="image description"></a></li>
+                                        <li><a class="tg-tooltip tg-tooltipwhite" href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Badge Title"><img src="~/images/badges/badge-04.png" alt="image description"></a></li>
+                                        <li><a class="tg-tooltip tg-tooltipwhite" href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Badge Title"><img src="~/images/badges/badge-05.png" alt="image description"></a></li>
+                                        <li><a class="tg-tooltip tg-tooltipwhite" href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Badge Title"><img src="~/images/badges/badge-06.png" alt="image description"></a></li>
+                                        <li><a class="tg-tooltip tg-tooltipwhite" href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Badge Title"><img src="~/images/badges/badge-07.png" alt="image description"></a></li>
+                                        <li><a class="tg-tooltip tg-tooltipwhite" href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Badge Title"><img src="~/images/badges/badge-08.png" alt="image description"></a></li>
+                                        <li><a class="tg-tooltip tg-tooltipwhite" href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Badge Title"><img src="~/images/badges/badge-09.png" alt="image description"></a></li>
+                                        <li><a class="tg-tooltip tg-tooltipwhite" href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Badge Title"><img src="~/images/badges/badge-10.png" alt="image description"></a></li>
+                                        <li><a class="tg-tooltip tg-tooltipwhite" href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Badge Title"><img src="~/images/badges/badge-11.png" alt="image description"></a></li>
+                                        <li><a class="tg-tooltip tg-tooltipwhite" href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Badge Title"><img src="~/images/badges/badge-12.png" alt="image description"></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12 col-xs-12">
+                            <div class="tg-profilewidget tg-recommendation">
+                                <a class="tg-refresh fa fa-refresh" href="#"></a>
+                                <h3>Total Recommendation</h3>
+                                <span class="tg-profilewidgeticon">
+                                    <img src="~/images/icons/icon-26.png" alt="image description">
+                                </span>
+                                <div class="tg-percentage">
+                                    <span>99%</span>
+                                    <span>Recommendation You Received</span>
+                                </div>
+                                <div class="tg-description">
+                                    <p><strong>1009 People Voted For You!</strong> Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12 col-xs-12">
+                            <div class="tg-profilewidget tg-favourites">
+                                <a class="tg-refresh fa fa-refresh" href="#"></a>
+                                <h3>Total Added To Favourites</h3>
+                                <span class="tg-profilewidgeticon">
+                                    <img src="~/images/icons/icon-27.png" alt="image description">
+                                </span>
+                                <div class="tg-followers">
+                                    <span>15092</span>
+                                    <span>People Added You In Favourite List</span>
+                                </div>
+                                <div class="tg-description">
+                                    <p><strong>1009 People Voted For You!</strong> Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-xs-12">
+                            <div class="tg-profilewidget tg-monthlyviews">
+                                <a class="tg-refresh fa fa-refresh" href="#"></a>
+                                <h3>Monthly Views</h3>
+                                <div class="tg-monthlyviewstab">
+                                    <div class="tg-monthlyviewstabnavtotlalviews">
+                                        <div class="tg-totalviews">
+                                            <span>15092</span>
+                                            <span>Total Views In Spetember</span>
+                                        </div>
+                                        <ul class="tg-monthlyviewstabnav" role="tablist">
+                                            <li role="presentation" class="active"><a href="#september" aria-controls="september" role="tab" data-toggle="tab">september 2016</a></li>
+                                            <li role="presentation"><a href="#august" aria-controls="august" role="tab" data-toggle="tab">august 2016</a></li>
+                                            <li role="presentation"><a href="#july" aria-controls="july" role="tab" data-toggle="tab">july 2016</a></li>
+                                            <li role="presentation"><a href="#june" aria-controls="june" role="tab" data-toggle="tab">june 2016</a></li>
+                                            <li role="presentation"><a href="#may" aria-controls="may" role="tab" data-toggle="tab">may 2016</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="tab-content tg-monthlyviewstabcontent">
+                                        <div role="tabpanel" class="tab-pane active" id="september">
+                                            <div id="tg-viewpermonthchartone" class="tg-themechart tg-viewpermonthchart"></div>
+                                        </div>
+                                        <div role="tabpanel" class="tab-pane" id="august">
+                                            <div id="tg-viewpermonthcharttwo" class="tg-themechart tg-viewpermonthchart"></div>
+                                        </div>
+                                        <div role="tabpanel" class="tab-pane" id="july">
+                                            <div id="tg-viewpermonthchartthree" class="tg-themechart tg-viewpermonthchart"></div>
+                                        </div>
+                                        <div role="tabpanel" class="tab-pane" id="june">
+                                            <div id="tg-viewpermonthchartfour" class="tg-themechart tg-viewpermonthchart"></div>
+                                        </div>
+                                        <div role="tabpanel" class="tab-pane" id="may">
+                                            <div id="tg-viewpermonthchartfive" class="tg-themechart tg-viewpermonthchart"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12 col-xs-12">
+                            <div class="tg-profilewidget tg-latestreviews">
+                                <a class="tg-refresh fa fa-refresh" href="#"></a>
+                                <h3>Total Recommendation</h3>
+                                <span class="tg-profilewidgeticon">
+                                    <img src="~/images/icons/icon-28.png" alt="image description">
+                                </span>
+                                <div class="tg-percentage">
+                                    <div class="tg-startsratingbox">
+                                        <span class="tg-stars"><span></span></span>
+                                    </div>
+                                    <span class="tg-subtitle">Recommendation You Received</span>
+                                </div>
+                                <ul class="tg-posttype tg-reviews tg-themescrollbar">
+                                    <li>
+                                        <figure>
+                                            <img src="~/images/thumbnails/img-07.jpg" alt="image description">
+                                            <figcaption><a href="#"><i class="fa fa-reply "></i></a></figcaption>
+                                        </figure>
+                                        <div class="tg-reviewcontent">
+                                            <div class="tg-reviewhead">
+                                                <h4><a href="#">Dr. Steve Northrop</a></h4><time datetime="2011-12-12">(5 Min Ago)</time>
+                                            </div>
+                                            <div class="tg-description">
+                                                <p>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <figure>
+                                            <img src="~/images/thumbnails/img-08.jpg" alt="image description">
+                                            <figcaption><a href="#"><i class="fa fa-reply "></i></a></figcaption>
+                                        </figure>
+                                        <div class="tg-reviewcontent">
+                                            <div class="tg-reviewhead">
+                                                <h4><a href="#">Dr. Steve Northrop</a></h4><time datetime="2011-12-12">(5 Min Ago)</time>
+                                            </div>
+                                            <div class="tg-description">
+                                                <p>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <figure>
+                                            <img src="~/images/thumbnails/img-09.jpg" alt="image description">
+                                            <figcaption><a href="#"><i class="fa fa-reply "></i></a></figcaption>
+                                        </figure>
+                                        <div class="tg-reviewcontent">
+                                            <div class="tg-reviewhead">
+                                                <h4><a href="#">Dr. Steve Northrop</a></h4><time datetime="2011-12-12">(5 Min Ago)</time>
+                                            </div>
+                                            <div class="tg-description">
+                                                <p>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <figure>
+                                            <img src="~/images/thumbnails/img-10.jpg" alt="image description">
+                                            <figcaption><a href="#"><i class="fa fa-reply "></i></a></figcaption>
+                                        </figure>
+                                        <div class="tg-reviewcontent">
+                                            <div class="tg-reviewhead">
+                                                <h4><a href="#">Dr. Steve Northrop</a></h4><time datetime="2011-12-12">(5 Min Ago)</time>
+                                            </div>
+                                            <div class="tg-description">
+                                                <p>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <figure>
+                                            <img src="~/images/thumbnails/img-11.jpg" alt="image description">
+                                            <figcaption><a href="#"><i class="fa fa-reply "></i></a></figcaption>
+                                        </figure>
+                                        <div class="tg-reviewcontent">
+                                            <div class="tg-reviewhead">
+                                                <h4><a href="#">Dr. Steve Northrop</a></h4><time datetime="2011-12-12">(5 Min Ago)</time>
+                                            </div>
+                                            <div class="tg-description">
+                                                <p>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <figure>
+                                            <img src="~/images/thumbnails/img-10.jpg" alt="image description">
+                                            <figcaption><a href="#"><i class="fa fa-reply "></i></a></figcaption>
+                                        </figure>
+                                        <div class="tg-reviewcontent">
+                                            <div class="tg-reviewhead">
+                                                <h4><a href="#">Dr. Steve Northrop</a></h4><time datetime="2011-12-12">(5 Min Ago)</time>
+                                            </div>
+                                            <div class="tg-description">
+                                                <p>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <figure>
+                                            <img src="~/images/thumbnails/img-11.jpg" alt="image description">
+                                            <figcaption><a href="#"><i class="fa fa-reply "></i></a></figcaption>
+                                        </figure>
+                                        <div class="tg-reviewcontent">
+                                            <div class="tg-reviewhead">
+                                                <h4><a href="#">Dr. Steve Northrop</a></h4><time datetime="2011-12-12">(5 Min Ago)</time>
+                                            </div>
+                                            <div class="tg-description">
+                                                <p>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <figure>
+                                            <img src="~/images/thumbnails/img-10.jpg" alt="image description">
+                                            <figcaption><a href="#"><i class="fa fa-reply "></i></a></figcaption>
+                                        </figure>
+                                        <div class="tg-reviewcontent">
+                                            <div class="tg-reviewhead">
+                                                <h4><a href="#">Dr. Steve Northrop</a></h4><time datetime="2011-12-12">(5 Min Ago)</time>
+                                            </div>
+                                            <div class="tg-description">
+                                                <p>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <figure>
+                                            <img src="~/images/thumbnails/img-11.jpg" alt="image description">
+                                            <figcaption><a href="#"><i class="fa fa-reply "></i></a></figcaption>
+                                        </figure>
+                                        <div class="tg-reviewcontent">
+                                            <div class="tg-reviewhead">
+                                                <h4><a href="#">Dr. Steve Northrop</a></h4><time datetime="2011-12-12">(5 Min Ago)</time>
+                                            </div>
+                                            <div class="tg-description">
+                                                <p>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="tg-btnbox">
+                                    <a class="tg-btn" href="#">View All</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12 col-xs-12">
+                            <div class="tg-profilewidget tg-askquestion">
+                                <a class="tg-refresh fa fa-refresh" href="#"></a>
+                                <h3>Total Added To Favourites</h3>
+                                <span class="tg-profilewidgeticon">
+                                    <img src="~/images/icons/icon-29.png" alt="image description">
+                                </span>
+                                <div class="tg-followers">
+                                    <span>15092</span>
+                                    <span>People Added You In Favourite List</span>
+                                </div>
+                                <div class="tg-description">
+                                    <p><strong>523 People found you not helpful</strong> Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                </div>
+                                <ul class="tg-posttype tg-askquestions tg-themescrollbar">
+                                    <li>
+                                        <figure>
+                                            <img src="~/images/thumbnails/img-07.jpg" alt="image description">
+                                            <figcaption><a href="#"><i class="fa fa-reply "></i></a></figcaption>
+                                        </figure>
+                                        <div class="tg-reviewcontent">
+                                            <div class="tg-reviewhead">
+                                                <h4><a href="#">Dr. Steve Northrop</a></h4><time datetime="2011-12-12">(5 Min Ago)</time>
+                                            </div>
+                                            <div class="tg-description">
+                                                <p>Anisi ut aliquip ex ea commodo consequat aute irure dolor in reprehenderit voluptate velit esse cillum dolore.</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <figure>
+                                            <img src="~/images/thumbnails/img-08.jpg" alt="image description">
+                                            <figcaption><a href="#"><i class="fa fa-reply "></i></a></figcaption>
+                                        </figure>
+                                        <div class="tg-reviewcontent">
+                                            <div class="tg-reviewhead">
+                                                <h4><a href="#">Dr. Steve Northrop</a></h4><time datetime="2011-12-12">(5 Min Ago)</time>
+                                            </div>
+                                            <div class="tg-description">
+                                                <p>Consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore sitasa magna aliqua enim ad minim veniam quist nostrud exercitation ullamco laboris.</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <figure>
+                                            <img src="~/images/thumbnails/img-09.jpg" alt="image description">
+                                            <figcaption><a href="#"><i class="fa fa-reply "></i></a></figcaption>
+                                        </figure>
+                                        <div class="tg-reviewcontent">
+                                            <div class="tg-reviewhead">
+                                                <h4><a href="#">Dr. Steve Northrop</a></h4><time datetime="2011-12-12">(5 Min Ago)</time>
+                                            </div>
+                                            <div class="tg-description">
+                                                <p>Anisi ut aliquip ex ea commodo consequat aute irure dolor in reprehenderit voluptate velit esse cillum dolore.</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <figure>
+                                            <img src="~/images/thumbnails/img-10.jpg" alt="image description">
+                                            <figcaption><a href="#"><i class="fa fa-reply "></i></a></figcaption>
+                                        </figure>
+                                        <div class="tg-reviewcontent">
+                                            <div class="tg-reviewhead">
+                                                <h4><a href="#">Dr. Steve Northrop</a></h4><time datetime="2011-12-12">(5 Min Ago)</time>
+                                            </div>
+                                            <div class="tg-description">
+                                                <p>Anisi ut aliquip ex ea commodo consequat aute irure dolor in reprehenderit voluptate velit esse cillum dolore.</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <figure>
+                                            <img src="~/images/thumbnails/img-11.jpg" alt="image description">
+                                            <figcaption><a href="#"><i class="fa fa-reply "></i></a></figcaption>
+                                        </figure>
+                                        <div class="tg-reviewcontent">
+                                            <div class="tg-reviewhead">
+                                                <h4><a href="#">Dr. Steve Northrop</a></h4><time datetime="2011-12-12">(5 Min Ago)</time>
+                                            </div>
+                                            <div class="tg-description">
+                                                <p>Consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore sitasa magna aliqua enim ad minim veniam quist nostrud exercitation ullamco laboris.</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <figure>
+                                            <img src="~/images/thumbnails/img-12.jpg" alt="image description">
+                                            <figcaption><a href="#"><i class="fa fa-reply "></i></a></figcaption>
+                                        </figure>
+                                        <div class="tg-reviewcontent">
+                                            <div class="tg-reviewhead">
+                                                <h4><a href="#">Dr. Steve Northrop</a></h4><time datetime="2011-12-12">(5 Min Ago)</time>
+                                            </div>
+                                            <div class="tg-description">
+                                                <p>Anisi ut aliquip ex ea commodo consequat aute irure dolor in reprehenderit voluptate velit esse cillum dolore.</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="tg-btnbox">
+                                    <a class="tg-btn" href="#">View All</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<!--************************************
+        Main End
+*************************************-->
+<!--************************************
+            Badge PopUp Start
+    *************************************-->
+<div id="tg-badgemodalbox" class="modal fade tg-badgemodalbox">
+    <div class="modal-dialog tg-modaldialog" role="document">
+        <div class="modal-content tg-badgemodalcontent">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"></span></button>
+            <span class="tg-newwidgeticon">
+                <img src="~/images/icons/icon-30.png" alt="image description">
+            </span>
+            <h4>Congratulation!</h4>
+            <span class="tg-subtitle">You Have Earned A New Badge</span>
+            <div class="tg-description">
+                <p><strong>cillum dolore eu fugiat nulla pariatur</strong>Consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et doloregna aliqua enim ad minim veniam quis nostrud exercitation ullamco.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!--************************************
+        Badge PopUp End
+*************************************-->

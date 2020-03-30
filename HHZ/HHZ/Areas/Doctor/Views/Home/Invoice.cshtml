@@ -1,0 +1,362 @@
+﻿
+@{
+    ViewBag.Title = "Invoice";
+}
+
+<!--************************************
+                Main Start
+*************************************-->
+<main id="tg-main" class="tg-main tg-haslayout">
+    <div class="container">
+        <div class="row">
+            <div id="tg-content" class="tg-content tg-dashboard">
+                <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12 pull-left">
+                    <div class="tg-widgetdashboard">
+                        <div class="tg-widgetprofile">
+                            <figure class="tg-directpostimg">
+                                <a href="#"><img src="~/images/thumbnails/img-20.jpg" alt="image description"></a>
+                                <figcaption>
+                                    <a class="tg-usericon tg-iconfeatured" href="#">
+                                        <em class="tg-usericonholder">
+                                            <i class="fa fa-bolt"></i>
+                                            <span>featured</span>
+                                        </em>
+                                    </a>
+                                    <a class="tg-usericon tg-iconvarified" href="#">
+                                        <em class="tg-usericonholder">
+                                            <i class="fa fa-shield"></i>
+                                            <span>varified</span>
+                                        </em>
+                                    </a>
+                                </figcaption>
+                            </figure>
+                            <div class="tg-directposthead">
+                                <h3><a href="#">Dr. Steve Northrop</a></h3>
+                                <div class="tg-subjects">MDS - Paedodontics &amp; Preventive Dentistry</div>
+                                <ul class="tg-metadata">
+                                    <li><span class="tg-stars"><span></span></span></li>
+                                    <li><a href="#"><i class="fa fa-thumbs-o-up"></i> 99% (1009 votes)</a></li>
+                                </ul>
+                            </div>
+                            <a class="tg-btn tg-btn-lg" href="@Url.Action("ProfileSetting","Home")">Edit Profile</a>
+
+                        </div>
+                        <nav id="tg-dashboardnav" class="tg-dashboardnav">
+                            <ul>
+                                <li>
+                                    <a href="@Url.Action("Dashboard","Home")">
+                                        <i class="fa fa-line-chart"></i>
+                                        <span>Insights</span>
+                                    </a>
+                                </li>
+
+                                <li class="tg-warningmessage">
+                                    <a href="@Url.Action("ProfileSetting","Home")">
+                                        <i class="fa fa-user"></i>
+                                        <span>Profile Settings</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("JobLoction","Home")">
+                                        <i class="fa fa-location-arrow"></i>
+                                        <span>Job Locations</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("PrivateMessages","Home")">
+                                        <i class="fa fa-envelope-o"></i>
+                                        <span>Private Messages</span>
+                                    </a>
+                                </li>
+                                <li class="tg-successmessage tg-active">
+                                    <a href="@Url.Action("Appointment","Home")">
+                                        <i class="fa fa-calendar-check-o"></i>
+                                        <span>Appointments</span>
+                                    </a>
+                                </li>
+                                <li class="tg-errormessage">
+                                    <a href="@Url.Action("AppointmentSetting","Home")">
+                                        <i class="fa fa-gear"></i>
+                                        <span>Appointment Settings</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("FavoritListing","Home")">
+                                        <i class="fa fa-heart"></i>
+                                        <span>Favourite Listings</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action(Url.Action("Invoice","Home"))">
+                                        <i class="fa fa-clone"></i>
+                                        <span>Invoices</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("UpdatePackage","Home")">
+                                        <i class="fa fa-arrow-up"></i>
+                                        <span>Update Package</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("SecuritySettings","Home")">
+                                        <i class="fa fa-gears"></i>
+                                        <span>Security Settings</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("PrivacySettings","Home")">
+                                        <i class="fa fa-eye"></i>
+                                        <span>Privacy Settings</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-sign-out"></i>
+                                        <span>Logout</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+
+                    </div>
+                    <div class="tg-widgetdashboard">
+                        <div class="tg-dashboardnotification tg-pkgexpirey"><span>13 days</span>silver package Expire in</div>
+                    </div>
+                    <div class="tg-widgetdashboard">
+                        <div class="tg-banneradd">
+                            <figure><a href="#"><img src="~/images/placeholder/img-01.jpg" alt="image description"></a></figure>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-9 col-md-8 col-sm-8 col-xs-12 pull-right">
+                    <div class="tg-dashboardinvoices">
+                        <div class="tg-dashboardbox">
+                            <div class="tg-dashboardboxtitle">
+                                <h2>Invoices</h2>
+                            </div>
+                            <div class="tg-tablescroll">
+                                <div class="tg-favoritlistingbox">
+                                    <div class="tg-invoicestitle">
+                                        <span>Title</span>
+                                        <span class="tg-titleamount">Amount</span>
+                                        <span class="tg-titleaction">Action</span>
+                                    </div>
+                                    <ul class="tg-invoices">
+                                        <li>
+                                            <div class="tg-invoicesheading">
+                                                <h3><a href="#">qtoplTw3TW7HQrODoOi2RPv7Re</a></h3>
+                                            </div>
+                                            <div class="tg-amout">
+                                                <em>$15.00</em>
+                                            </div>
+                                            <div class="tg-btnaction">
+                                                <a class="tg-btnview" href="#"><i class="fa fa-eye"></i></a>
+                                                <a class="tg-btndelete" href="#"><i class="fa fa-minus"></i></a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="tg-invoicesheading">
+                                                <h3><a href="#">ffjGPOhICNIWKSUjobaelD9MmP</a></h3>
+                                            </div>
+                                            <div class="tg-amout">
+                                                <em>$10.00</em>
+                                            </div>
+                                            <div class="tg-btnaction">
+                                                <a class="tg-btnview" href="#"><i class="fa fa-eye"></i></a>
+                                                <a class="tg-btndelete" href="#"><i class="fa fa-minus"></i></a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="tg-invoicesheading">
+                                                <h3><a href="#">eoNhX968pGFBnUyIomeLYhdCXP</a></h3>
+                                            </div>
+                                            <div class="tg-amout">
+                                                <em>$15.00</em>
+                                            </div>
+                                            <div class="tg-btnaction">
+                                                <a class="tg-btnview" href="#"><i class="fa fa-eye"></i></a>
+                                                <a class="tg-btndelete" href="#"><i class="fa fa-minus"></i></a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="tg-invoicesheading">
+                                                <h3><a href="#">RbirHjPnfH5fKgbE67Qf2piRki</a></h3>
+                                            </div>
+                                            <div class="tg-amout">
+                                                <em>$10.00</em>
+                                            </div>
+                                            <div class="tg-btnaction">
+                                                <a class="tg-btnview" href="#"><i class="fa fa-eye"></i></a>
+                                                <a class="tg-btndelete" href="#"><i class="fa fa-minus"></i></a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="tg-invoicesheading">
+                                                <h3><a href="#">eAqDihTqhMIZfnGVWfQ1eM7MeT</a></h3>
+                                            </div>
+                                            <div class="tg-amout">
+                                                <em>$20.00</em>
+                                            </div>
+                                            <div class="tg-btnaction">
+                                                <a class="tg-btnview" href="#"><i class="fa fa-eye"></i></a>
+                                                <a class="tg-btndelete" href="#"><i class="fa fa-minus"></i></a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="tg-invoicesheading">
+                                                <h3><a href="#">YgYdgl6ZVk8nQL0geGFyEB3xKR</a></h3>
+                                            </div>
+                                            <div class="tg-amout">
+                                                <em>$25.00</em>
+                                            </div>
+                                            <div class="tg-btnaction">
+                                                <a class="tg-btnview" href="#"><i class="fa fa-eye"></i></a>
+                                                <a class="tg-btndelete" href="#"><i class="fa fa-minus"></i></a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="tg-invoicesheading">
+                                                <h3><a href="#">URKCkEfkz2BEXS4F9c9XPRDHgc</a></h3>
+                                            </div>
+                                            <div class="tg-amout">
+                                                <em>$15.00</em>
+                                            </div>
+                                            <div class="tg-btnaction">
+                                                <a class="tg-btnview" href="#"><i class="fa fa-eye"></i></a>
+                                                <a class="tg-btndelete" href="#"><i class="fa fa-minus"></i></a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="tg-invoicesheading">
+                                                <h3><a href="#">4316wa4Ejxd5wmdaqAdzViQxod</a></h3>
+                                            </div>
+                                            <div class="tg-amout">
+                                                <em>$20.00</em>
+                                            </div>
+                                            <div class="tg-btnaction">
+                                                <a class="tg-btnview" href="#"><i class="fa fa-eye"></i></a>
+                                                <a class="tg-btndelete" href="#"><i class="fa fa-minus"></i></a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="tg-invoicesheading">
+                                                <h3><a href="#">EJt98TszfidTEYENca9hEi4YIt</a></h3>
+                                            </div>
+                                            <div class="tg-amout">
+                                                <em>$10.00</em>
+                                            </div>
+                                            <div class="tg-btnaction">
+                                                <a class="tg-btnview" href="#"><i class="fa fa-eye"></i></a>
+                                                <a class="tg-btndelete" href="#"><i class="fa fa-minus"></i></a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="tg-invoicesheading">
+                                                <h3><a href="#">srXHdkg8iLVavs5FUnzOhSnkxX</a></h3>
+                                            </div>
+                                            <div class="tg-amout">
+                                                <em>$5.00</em>
+                                            </div>
+                                            <div class="tg-btnaction">
+                                                <a class="tg-btnview" href="#"><i class="fa fa-eye"></i></a>
+                                                <a class="tg-btndelete" href="#"><i class="fa fa-minus"></i></a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="tg-invoicesheading">
+                                                <h3><a href="#">Syn29BifLt9M9Aqlvnad6L7vUg</a></h3>
+                                            </div>
+                                            <div class="tg-amout">
+                                                <em>$25.00</em>
+                                            </div>
+                                            <div class="tg-btnaction">
+                                                <a class="tg-btnview" href="#"><i class="fa fa-eye"></i></a>
+                                                <a class="tg-btndelete" href="#"><i class="fa fa-minus"></i></a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="tg-invoicesheading">
+                                                <h3><a href="#">XrXNfR2RTUwmYsLnm7SRZo6Tl8</a></h3>
+                                            </div>
+                                            <div class="tg-amout">
+                                                <em>$20.00</em>
+                                            </div>
+                                            <div class="tg-btnaction">
+                                                <a class="tg-btnview" href="#"><i class="fa fa-eye"></i></a>
+                                                <a class="tg-btndelete" href="#"><i class="fa fa-minus"></i></a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="tg-invoicesheading">
+                                                <h3><a href="#">Pg1iQ3TqXnORYdaYHRKr8mlZFC</a></h3>
+                                            </div>
+                                            <div class="tg-amout">
+                                                <em>$10.00</em>
+                                            </div>
+                                            <div class="tg-btnaction">
+                                                <a class="tg-btnview" href="#"><i class="fa fa-eye"></i></a>
+                                                <a class="tg-btndelete" href="#"><i class="fa fa-minus"></i></a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="tg-invoicesheading">
+                                                <h3><a href="#">W2BjFOUlWV4kightM5DIM1VlHy</a></h3>
+                                            </div>
+                                            <div class="tg-amout">
+                                                <em>$15.00</em>
+                                            </div>
+                                            <div class="tg-btnaction">
+                                                <a class="tg-btnview" href="#"><i class="fa fa-eye"></i></a>
+                                                <a class="tg-btndelete" href="#"><i class="fa fa-minus"></i></a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="tg-invoicesheading">
+                                                <h3><a href="#">5vf721xUk8mJ1FO3ceX3aLPQFJ</a></h3>
+                                            </div>
+                                            <div class="tg-amout">
+                                                <em>$20.00</em>
+                                            </div>
+                                            <div class="tg-btnaction">
+                                                <a class="tg-btnview" href="#"><i class="fa fa-eye"></i></a>
+                                                <a class="tg-btndelete" href="#"><i class="fa fa-minus"></i></a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="tg-invoicesheading">
+                                                <h3><a href="#">Fy30UveMVAzk4dR09gPBYHIZrK</a></h3>
+                                            </div>
+                                            <div class="tg-amout">
+                                                <em>$15.00</em>
+                                            </div>
+                                            <div class="tg-btnaction">
+                                                <a class="tg-btnview" href="#"><i class="fa fa-eye"></i></a>
+                                                <a class="tg-btndelete" href="#"><i class="fa fa-minus"></i></a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="tg-invoicesheading">
+                                                <h3><a href="#">yapW0w3TN5s4KfE4ZKBBBC2LAN</a></h3>
+                                            </div>
+                                            <div class="tg-amout">
+                                                <em>$10.00</em>
+                                            </div>
+                                            <div class="tg-btnaction">
+                                                <a class="tg-btnview" href="#"><i class="fa fa-eye"></i></a>
+                                                <a class="tg-btndelete" href="#"><i class="fa fa-minus"></i></a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<!--************************************
+        Main End
+*************************************-->

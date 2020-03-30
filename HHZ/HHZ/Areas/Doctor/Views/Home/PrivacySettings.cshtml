@@ -1,0 +1,377 @@
+﻿
+@{
+    ViewBag.Title = "PrivacySettings";
+}
+
+<!--************************************
+                Main Start
+*************************************-->
+<main id="tg-main" class="tg-main tg-haslayout">
+    <div class="container">
+        <div class="row">
+            <div id="tg-content" class="tg-content tg-dashboard">
+                <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12 pull-left">
+                    <div class="tg-widgetdashboard">
+                        <div class="tg-widgetprofile">
+                            <figure class="tg-directpostimg">
+                                <a href="#"><img src="~/images/thumbnails/img-20.jpg" alt="image description"></a>
+                                <figcaption>
+                                    <a class="tg-usericon tg-iconfeatured" href="#">
+                                        <em class="tg-usericonholder">
+                                            <i class="fa fa-bolt"></i>
+                                            <span>featured</span>
+                                        </em>
+                                    </a>
+                                    <a class="tg-usericon tg-iconvarified" href="#">
+                                        <em class="tg-usericonholder">
+                                            <i class="fa fa-shield"></i>
+                                            <span>varified</span>
+                                        </em>
+                                    </a>
+                                </figcaption>
+                            </figure>
+                            <div class="tg-directposthead">
+                                <h3><a href="#">Dr. Steve Northrop</a></h3>
+                                <div class="tg-subjects">MDS - Paedodontics &amp; Preventive Dentistry</div>
+                                <ul class="tg-metadata">
+                                    <li><span class="tg-stars"><span></span></span></li>
+                                    <li><a href="#"><i class="fa fa-thumbs-o-up"></i> 99% (1009 votes)</a></li>
+                                </ul>
+                            </div>
+                            <a class="tg-btn tg-btn-lg" href="@Url.Action("ProfileSetting","Home")">Edit Profile</a>
+
+                        </div>
+
+                        <nav id="tg-dashboardnav" class="tg-dashboardnav">
+                            <ul>
+                                <li>
+                                    <a href="@Url.Action("Dashboard","Home")">
+                                        <i class="fa fa-line-chart"></i>
+                                        <span>Insights</span>
+                                    </a>
+                                </li>
+
+                                <li class="tg-warningmessage">
+                                    <a href="@Url.Action("ProfileSetting","Home")">
+                                        <i class="fa fa-user"></i>
+                                        <span>Profile Settings</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("JobLoction","Home")">
+                                        <i class="fa fa-location-arrow"></i>
+                                        <span>Job Locations</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("PrivateMessages","Home")">
+                                        <i class="fa fa-envelope-o"></i>
+                                        <span>Private Messages</span>
+                                    </a>
+                                </li>
+                                <li class="tg-successmessage tg-active">
+                                    <a href="@Url.Action("Appointment","Home")">
+                                        <i class="fa fa-calendar-check-o"></i>
+                                        <span>Appointments</span>
+                                    </a>
+                                </li>
+                                <li class="tg-errormessage">
+                                    <a href="@Url.Action("AppointmentSetting","Home")">
+                                        <i class="fa fa-gear"></i>
+                                        <span>Appointment Settings</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("FavoritListing","Home")">
+                                        <i class="fa fa-heart"></i>
+                                        <span>Favourite Listings</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action(Url.Action("Invoice","Home"))">
+                                        <i class="fa fa-clone"></i>
+                                        <span>Invoices</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("UpdatePackage","Home")">
+                                        <i class="fa fa-arrow-up"></i>
+                                        <span>Update Package</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("SecuritySettings","Home")">
+                                        <i class="fa fa-gears"></i>
+                                        <span>Security Settings</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("PrivacySettings","Home")">
+                                        <i class="fa fa-eye"></i>
+                                        <span>Privacy Settings</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-sign-out"></i>
+                                        <span>Logout</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+
+
+                    </div>
+                    <div class="tg-widgetdashboard">
+                        <div class="tg-dashboardnotification tg-pkgexpirey"><span>13 days</span>silver package Expire in</div>
+                    </div>
+                    <div class="tg-widgetdashboard">
+                        <div class="tg-banneradd">
+                            <figure><a href="#"><img src="~/images/placeholder/img-01.jpg" alt="image description"></a></figure>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-9 col-md-8 col-sm-8 col-xs-12 pull-right">
+                    <div class="tg-dashboardprivacy">
+                        <div class="tg-dashboardbox">
+                            <div class="tg-dashboardboxtitle">
+                                <h2>Privacy Settings</h2>
+                            </div>
+                            <div class="tg-privacysettingbox">
+                                <form class="tg-formtheme">
+                                    <fieldset>
+                                        <div class="row tg-rowmargin">
+                                            <div class="col-md-6 col-sm-6 col-xs-12 tg-columnpadding">
+                                                <div class="form-group tg-formgroup">
+                                                    <div class="tg-optionbox">
+                                                        <span>Profile Picture</span>
+                                                        <span class="tg-iosstylcheckbox">
+                                                            <input type="checkbox" id="profilepicture" name="profilepicture" value="profilepicture">
+                                                            <label for="profilepicture"></label>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-sm-6 col-xs-12 tg-columnpadding">
+                                                <div class="form-group tg-formgroup">
+                                                    <div class="tg-optionbox">
+                                                        <span>Timeline Picture</span>
+                                                        <span class="tg-iosstylcheckbox">
+                                                            <input type="checkbox" id="timelinepicture" name="timelinepicture" value="timelinepicture" checked>
+                                                            <label for="timelinepicture"></label>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-sm-6 col-xs-12 tg-columnpadding">
+                                                <div class="form-group tg-formgroup">
+                                                    <div class="tg-optionbox">
+                                                        <span>Social Detail</span>
+                                                        <span class="tg-iosstylcheckbox">
+                                                            <input type="checkbox" id="socialdetail" name="socialdetail" value="socialdetail" checked>
+                                                            <label for="socialdetail"></label>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-sm-6 col-xs-12 tg-columnpadding">
+                                                <div class="form-group tg-formgroup">
+                                                    <div class="tg-optionbox">
+                                                        <span>Location</span>
+                                                        <span class="tg-iosstylcheckbox">
+                                                            <input type="checkbox" id="location" name="location" value="location">
+                                                            <label for="location"></label>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-sm-6 col-xs-12 tg-columnpadding">
+                                                <div class="form-group tg-formgroup">
+                                                    <div class="tg-optionbox">
+                                                        <span>About Me</span>
+                                                        <span class="tg-iosstylcheckbox">
+                                                            <input type="checkbox" id="aboutme" name="aboutme" value="aboutme" checked>
+                                                            <label for="aboutme"></label>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-sm-6 col-xs-12 tg-columnpadding">
+                                                <div class="form-group tg-formgroup">
+                                                    <div class="tg-optionbox">
+                                                        <span>Schedule</span>
+                                                        <span class="tg-iosstylcheckbox">
+                                                            <input type="checkbox" id="schedule" name="schedule" value="schedule">
+                                                            <label for="schedule"></label>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-sm-6 col-xs-12 tg-columnpadding">
+                                                <div class="form-group tg-formgroup">
+                                                    <div class="tg-optionbox">
+                                                        <span>Contact Form</span>
+                                                        <span class="tg-iosstylcheckbox">
+                                                            <input type="checkbox" id="contactform" name="contactform" value="contactform" checked>
+                                                            <label for="contactform"></label>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-sm-6 col-xs-12 tg-columnpadding">
+                                                <div class="form-group tg-formgroup">
+                                                    <div class="tg-optionbox">
+                                                        <span>Skills</span>
+                                                        <span class="tg-iosstylcheckbox">
+                                                            <input type="checkbox" id="skills" name="skills" value="skills">
+                                                            <label for="skills"></label>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-sm-6 col-xs-12 tg-columnpadding">
+                                                <div class="form-group tg-formgroup">
+                                                    <div class="tg-optionbox">
+                                                        <span>Experience</span>
+                                                        <span class="tg-iosstylcheckbox">
+                                                            <input type="checkbox" id="experience" name="experience" value="experience" checked>
+                                                            <label for="experience"></label>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-sm-6 col-xs-12 tg-columnpadding">
+                                                <div class="form-group tg-formgroup">
+                                                    <div class="tg-optionbox">
+                                                        <span>Qualification</span>
+                                                        <span class="tg-iosstylcheckbox">
+                                                            <input type="checkbox" id="qualification" name="qualification" value="qualification" checked>
+                                                            <label for="qualification"></label>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-sm-6 col-xs-12 tg-columnpadding">
+                                                <div class="form-group tg-formgroup">
+                                                    <div class="tg-optionbox">
+                                                        <span>Honour &amp; Awards</span>
+                                                        <span class="tg-iosstylcheckbox">
+                                                            <input type="checkbox" id="honourawards" name="honourawards" value="honourawards">
+                                                            <label for="honourawards"></label>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-sm-6 col-xs-12 tg-columnpadding">
+                                                <div class="form-group tg-formgroup">
+                                                    <div class="tg-optionbox">
+                                                        <span>Presentation Video</span>
+                                                        <span class="tg-iosstylcheckbox">
+                                                            <input type="checkbox" id="presentationvideo" name="presentationvideo" value="presentationvideo" checked>
+                                                            <label for="presentationvideo"></label>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-sm-6 col-xs-12 tg-columnpadding">
+                                                <div class="form-group tg-formgroup">
+                                                    <div class="tg-optionbox">
+                                                        <span>Photo Gallery</span>
+                                                        <span class="tg-iosstylcheckbox">
+                                                            <input type="checkbox" id="photogallery" name="photogallery" value="photogallery">
+                                                            <label for="photogallery"></label>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-sm-6 col-xs-12 tg-columnpadding">
+                                                <div class="form-group tg-formgroup">
+                                                    <div class="tg-optionbox">
+                                                        <span>Review &amp; Rating</span>
+                                                        <span class="tg-iosstylcheckbox">
+                                                            <input type="checkbox" id="reviewrating" name="reviewrating" value="reviewrating" checked>
+                                                            <label for="reviewrating"></label>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-sm-6 col-xs-12 tg-columnpadding">
+                                                <div class="form-group tg-formgroup">
+                                                    <div class="tg-optionbox">
+                                                        <span>Fee</span>
+                                                        <span class="tg-iosstylcheckbox">
+                                                            <input type="checkbox" id="fee" name="fee" value="fee" checked>
+                                                            <label for="fee"></label>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-sm-6 col-xs-12 tg-columnpadding">
+                                                <div class="form-group tg-formgroup">
+                                                    <div class="tg-optionbox">
+                                                        <span>Language</span>
+                                                        <span class="tg-iosstylcheckbox">
+                                                            <input type="checkbox" id="language" name="language" value="language">
+                                                            <label for="language"></label>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-sm-6 col-xs-12 tg-columnpadding">
+                                                <div class="form-group tg-formgroup">
+                                                    <div class="tg-optionbox">
+                                                        <span>Gender</span>
+                                                        <span class="tg-iosstylcheckbox">
+                                                            <input type="checkbox" id="gender" name="gender" value="gender">
+                                                            <label for="gender"></label>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-sm-6 col-xs-12 tg-columnpadding">
+                                                <div class="form-group tg-formgroup">
+                                                    <div class="tg-optionbox">
+                                                        <span>Age Range</span>
+                                                        <span class="tg-iosstylcheckbox">
+                                                            <input type="checkbox" id="agerange" name="agerange" value="agerange" checked>
+                                                            <label for="agerange"></label>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-sm-6 col-xs-12 tg-columnpadding">
+                                                <div class="tg-optionbox">
+                                                    <span>Public URL</span>
+                                                    <span class="tg-iosstylcheckbox">
+                                                        <input type="checkbox" id="publicurl" name="publicurl" value="publicurl">
+                                                        <label for="publicurl"></label>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-sm-6 col-xs-12 tg-columnpadding">
+                                                <div class="tg-optionbox">
+                                                    <span>Contact Details</span>
+                                                    <span class="tg-iosstylcheckbox">
+                                                        <input type="checkbox" id="contactdetail" name="contactdetail" value="contactdetail" checked>
+                                                        <label for="contactdetail"></label>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="tg-updateall">
+                            <span class="tg-note">* Click <strong>update all changes</strong> to update latest added detail (s).</span>
+                            <button class="tg-btn" type="submit">update now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<!--************************************
+        Main End
+*************************************-->
